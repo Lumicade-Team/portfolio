@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page | Free Next.js Template for Startup and SaaS",
+  title: "Blog Page | Lumicade",
   description: "This is Blog Page for Lumicade Nextjs Template",
   // other metadata
 };

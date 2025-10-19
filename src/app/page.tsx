@@ -12,7 +12,7 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
+  title: "Lumicade",
   description: "This is Home for Lumicade Nextjs Template",
   // other metadata
 };
