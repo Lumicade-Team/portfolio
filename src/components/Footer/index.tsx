@@ -32,6 +32,17 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center">
                   <a
+                    href="mailto:lumicade.dev@gmail.com"
+                    aria-label="Email"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.236-8 5-8-5V6l8 5 8-5v2.236Z"/>
+                    </svg>
+                  </a>
+                  <a
                     href="https://www.linkedin.com/in/lumicade-solutions-490aa838b/"
                     aria-label="LinkedIn"
                     target="_blank"
