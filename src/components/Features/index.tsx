@@ -8,8 +8,8 @@ const Features = () => {
       <section id="features" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            title="Everything you need to tame receipts"
+            paragraph="Capture receipts with the camera, extract text with OCR, edit and store locally, then ask natural-language questions for instant insights. Works fully offline."
             center
           />
 

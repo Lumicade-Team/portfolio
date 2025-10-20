@@ -12,8 +12,8 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lumicade",
-  description: "This is Home for Lumicade Nextjs Template",
+  title: "Lumicade Solutions | Receipt OCR & AI Expense Insights",
+  description: "Scan receipts, extract data with OCR, stay 100% offline, and get AI insights. Lumicade Solutions helps you track spending fast—with CSV/Excel export and a $1/mo Pro plan.",
   // other metadata
 };
 
