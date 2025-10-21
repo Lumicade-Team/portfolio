@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Mark Wilson",
+    designation: "Freelance Designer",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Finally, a receipt app that doesn't require me to create an account or upload my data to someone else's servers. I've been using Lumicade for three months and love that everything stays on my phone. The AI insights are surprisingly accurate—it caught that I was spending way too much on takeout!",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "James Rodriguez",
+    designation: "Café Owner",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "As a small business owner, I was tired of subscription-based expense apps that hold my data hostage. Lumicade's one-time payment and local storage model is refreshing. The OCR accuracy is excellent, and exporting to Excel for my accountant takes seconds. Highly recommend for anyone serious about privacy!",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "Mike Anderson",
+    designation: "Marketing Consultant",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "I travel frequently for work and needed something that works offline. Lumicade is perfect—I can scan receipts on planes, in remote locations, anywhere. When I get back online, I just ask it 'how much did I spend on this trip?' and get instant answers.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -38,7 +38,7 @@ const Testimonials = () => {
       <div className="container">
         <SectionTitle
           title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="Hear from our satisfied users about how Lumicade has transformed their expense management while prioritizing privacy and data security."
           center
         />
 
