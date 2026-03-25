@@ -1,9 +1,15 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const accent = mounted && theme === "light" ? "#3352DA" : "#fff";
+  const accentAlt = mounted && theme === "light" ? "#229D94" : "#fff";
 
   return (
     <div className="shadow-card dark:bg-dark relative z-10 rounded-xl bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
@@ -60,12 +66,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -96,12 +102,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -132,12 +138,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#229D94" : "#fff"}
+                  stopColor={accentAlt}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#229D94" : "#fff"}
+                  stopColor={accentAlt}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -176,11 +182,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -194,11 +200,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
+                  stopColor={accent}
                   stopOpacity="0"
                 />
               </linearGradient>

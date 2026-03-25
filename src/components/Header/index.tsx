@@ -24,7 +24,8 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-  });
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
+  }, []);
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
@@ -49,26 +50,19 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+            <div className="max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
+                className={`header-logo flex items-center ${
+                  sticky ? "py-2 lg:py-1" : "py-3"
                 } `}
               >
                 <Image
-                  src="/images/lumicade/Lumicade-Gold-Black.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                />
-                <Image
-                  src="/images/lumicade/Lumicade-Gold-White.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
+                  src="/assets/imgs/Lumicade-Solutions-Logo-4096.svg"
+                  alt="Lumicade Solutions"
+                  width={160}
+                  height={160}
+                  className={`transition-all duration-300 ${sticky ? "h-[100px] w-[100px]" : "h-[140px] w-[140px]"}`}
                 />
               </Link>
             </div>

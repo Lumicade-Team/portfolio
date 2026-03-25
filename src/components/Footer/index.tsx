@@ -12,11 +12,11 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="/images/lumicade/Lumicade-Gold-White.png"
+                    src="/assets/imgs/Lumicade-Solutions-Logo-4096.svg"
                     alt="Lumicade Solutions"
                     width={140}
-                    height={30}
-                    className="w-full"
+                    height={140}
+                    className="h-16 w-16"
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color-dark">
