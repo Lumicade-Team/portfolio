@@ -5,30 +5,30 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-lumi-navy md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Scan receipts. Extract data. Get AI insights.
+                <h1 className="mb-5 text-3xl font-bold leading-tight text-lumi-navy dark:text-lumi-offwhite sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                  We Build. We Automate. We Scale.
                 </h1>
                 <p className="mb-12 text-base leading-relaxed! text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Lumicade Solutions is a simple, privacy-first receipt manager. Capture with your camera, extract text with on-device OCR, edit manually, and stay 100% offline. When online, ask natural-language questions and get instant spending insights.
+                  Lumicade Solutions is a full-service software house and SaaS provider. From custom web systems and mobile apps to AI-powered workflows and our own subscription-based microservices — we turn ideas into production-ready solutions.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="#pricing"
-                    className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    href="/#products"
+                    className="rounded-lg bg-primary px-8 py-4 text-base font-semibold text-lumi-offwhite duration-300 ease-in-out hover:bg-primary/80"
                   >
-                    Start Free
+                    View Our Work
                   </Link>
                   <Link
-                    href="#features"
-                    className="inline-block rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    href="/contact"
+                    className="inline-block rounded-lg border border-primary px-8 py-4 text-base font-semibold text-primary duration-300 ease-in-out hover:bg-primary hover:text-lumi-offwhite dark:text-lumi-offwhite dark:border-lumi-offwhite dark:hover:bg-primary dark:hover:border-primary"
                   >
-                    See Features
+                    Get In Touch
                   </Link>
                 </div>
               </div>
@@ -101,8 +101,8 @@ const Hero = () => {
                 y2="288"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+                <stop stopColor="#3352DA" />
+                <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_25:217"
@@ -112,8 +112,8 @@ const Hero = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(17.9997 182) rotate(90) scale(18)"
               >
-                <stop offset="0.145833" stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0.08" />
+                <stop offset="0.145833" stopColor="#3352DA" stopOpacity="0" />
+                <stop offset="1" stopColor="#3352DA" stopOpacity="0.08" />
               </radialGradient>
               <radialGradient
                 id="paint2_radial_25:217"
@@ -123,8 +123,8 @@ const Hero = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(76.9997 288) rotate(90) scale(34)"
               >
-                <stop offset="0.145833" stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0.08" />
+                <stop offset="0.145833" stopColor="#229D94" stopOpacity="0" />
+                <stop offset="1" stopColor="#229D94" stopOpacity="0.08" />
               </radialGradient>
               <linearGradient
                 id="paint3_linear_25:217"
@@ -134,8 +134,8 @@ const Hero = () => {
                 y2="351.421"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+                <stop stopColor="#229D94" />
+                <stop offset="1" stopColor="#229D94" stopOpacity="0" />
               </linearGradient>
               <linearGradient
                 id="paint4_linear_25:217"
@@ -145,7 +145,7 @@ const Hero = () => {
                 y2="448.882"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
+                <stop stopColor="#3352DA" />
                 <stop offset="1" stopColor="white" stopOpacity="0" />
               </linearGradient>
               <linearGradient
@@ -156,7 +156,7 @@ const Hero = () => {
                 y2="470"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
+                <stop stopColor="#3352DA" />
                 <stop offset="1" stopColor="white" stopOpacity="0" />
               </linearGradient>
               <linearGradient
@@ -167,8 +167,8 @@ const Hero = () => {
                 y2="338.63"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+                <stop stopColor="#229D94" />
+                <stop offset="1" stopColor="#229D94" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
@@ -215,8 +215,8 @@ const Hero = () => {
                 y2="212.24"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" />
+                <stop stopColor="#3352DA" stopOpacity="0" />
+                <stop offset="1" stopColor="#3352DA" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_25:218"
@@ -226,8 +226,8 @@ const Hero = () => {
                 y2="212.24"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" />
+                <stop stopColor="#3352DA" stopOpacity="0" />
+                <stop offset="1" stopColor="#3352DA" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_25:218"
@@ -237,8 +237,8 @@ const Hero = () => {
                 y2="212.24"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" />
+                <stop stopColor="#3352DA" stopOpacity="0" />
+                <stop offset="1" stopColor="#3352DA" />
               </linearGradient>
               <linearGradient
                 id="paint3_linear_25:218"
@@ -248,8 +248,8 @@ const Hero = () => {
                 y2="210.214"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" stopOpacity="0" />
-                <stop offset="1" stopColor="#10B981" />
+                <stop stopColor="#229D94" stopOpacity="0" />
+                <stop offset="1" stopColor="#229D94" />
               </linearGradient>
               <linearGradient
                 id="paint4_linear_25:218"
@@ -259,8 +259,8 @@ const Hero = () => {
                 y2="99.5816"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#10B981" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+                <stop stopColor="#3352DA" />
+                <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint5_radial_25:218"

@@ -6,12 +6,12 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
   const { title, image, paragraph, author, tags, publishDate } = blog;
   return (
     <>
-      <div className="group shadow-one hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark relative overflow-hidden rounded-xs bg-white duration-300">
+      <div className="group shadow-card hover:shadow-feature-2 dark:bg-dark dark:hover:shadow-gray-dark relative overflow-hidden rounded-xl bg-white duration-300">
         <Link
           href="/blog-details"
           className="relative block aspect-37/22 w-full"
         >
-          <span className="bg-primary absolute top-6 right-6 z-20 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white capitalize">
+          <span className="bg-teal absolute top-6 right-6 z-20 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-lumi-offwhite capitalize">
             {tags[0]}
           </span>
           <Image src={image} alt="image" fill />
@@ -20,7 +20,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
           <h3>
             <Link
               href="/blog-details"
-              className="hover:text-primary dark:hover:text-primary mb-4 block text-xl font-bold text-black sm:text-2xl dark:text-white"
+              className="hover:text-primary dark:hover:text-primary mb-4 block text-xl font-bold text-lumi-navy sm:text-2xl dark:text-lumi-offwhite"
             >
               {title}
             </Link>
@@ -36,14 +36,14 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
                 </div>
               </div>
               <div className="w-full">
-                <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
+                <h4 className="text-lumi-navy mb-1 text-sm font-medium dark:text-lumi-offwhite">
                   By {author.name}
                 </h4>
                 <p className="text-body-color text-xs">{author.designation}</p>
               </div>
             </div>
             <div className="inline-block">
-              <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
+              <h4 className="text-lumi-navy mb-1 text-sm font-medium dark:text-lumi-offwhite">
                 Date
               </h4>
               <p className="text-body-color text-xs">{publishDate}</p>

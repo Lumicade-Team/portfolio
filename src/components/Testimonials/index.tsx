@@ -4,29 +4,32 @@ import SingleTestimonial from "./SingleTestimonial";
 
 const testimonialData: Testimonial[] = [
   {
+    /* TODO: Replace with real client testimonial */
     id: 1,
-    name: "Mark Wilson",
-    designation: "Freelance Designer",
+    name: "Ahmad Razif",
+    designation: "Operations Manager, KL Logistics",
     content:
-      "Finally, a receipt app that doesn't require me to create an account or upload my data to someone else's servers. I've been using Lumicade for three months and love that everything stays on my phone. The AI insights are surprisingly accurate—it caught that I was spending way too much on takeout!",
+      "Lumicade built us a custom fleet management dashboard that cut our manual reporting time by 70%. Their team understood our workflows from day one and delivered a system that our entire operations team adopted within a week.",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
+    /* TODO: Replace with real client testimonial */
     id: 2,
-    name: "James Rodriguez",
-    designation: "Café Owner",
+    name: "Siti Aminah",
+    designation: "CEO, GreenPulse Sdn Bhd",
     content:
-      "As a small business owner, I was tired of subscription-based expense apps that hold my data hostage. Lumicade's one-time payment and local storage model is refreshing. The OCR accuracy is excellent, and exporting to Excel for my accountant takes seconds. Highly recommend for anyone serious about privacy!",
+      "We needed an AI pipeline to classify and route incoming support tickets. Lumicade's automation solution reduced our average response time from 4 hours to under 30 minutes. Their AI-first approach is the real deal.",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
   {
+    /* TODO: Replace with real client testimonial */
     id: 3,
-    name: "Mike Anderson",
-    designation: "Marketing Consultant",
+    name: "Daniel Lim",
+    designation: "Founder, QuickServe App",
     content:
-      "I travel frequently for work and needed something that works offline. Lumicade is perfect—I can scan receipts on planes, in remote locations, anywhere. When I get back online, I just ask it 'how much did I spend on this trip?' and get instant answers.",
+      "From wireframes to App Store launch, Lumicade handled everything for our food delivery app. Cross-platform, smooth performance, and delivered ahead of schedule. They're our go-to tech partner now.",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -37,8 +40,8 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="Hear from our satisfied users about how Lumicade has transformed their expense management while prioritizing privacy and data security."
+          title="What Our Clients Say"
+          paragraph="Hear from businesses across Malaysia who trust Lumicade Solutions to deliver their technology projects."
           center
         />
 
@@ -85,8 +88,8 @@ const Testimonials = () => {
               y2="459.865"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" />
-              <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+              <stop stopColor="#3352DA" />
+              <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_83:2"
@@ -96,8 +99,8 @@ const Testimonials = () => {
               y2="675.565"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" />
-              <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+              <stop stopColor="#3352DA" />
+              <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -137,8 +140,8 @@ const Testimonials = () => {
               y2="8.15715"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" stopOpacity="0" />
-              <stop offset="1" stopColor="#10B981" />
+              <stop stopColor="#229D94" stopOpacity="0" />
+              <stop offset="1" stopColor="#229D94" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_72:302"
@@ -148,8 +151,8 @@ const Testimonials = () => {
               y2="-2.84285"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" stopOpacity="0" />
-              <stop offset="1" stopColor="#10B981" />
+              <stop stopColor="#229D94" stopOpacity="0" />
+              <stop offset="1" stopColor="#229D94" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_72:302"
@@ -159,8 +162,8 @@ const Testimonials = () => {
               y2="19.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" stopOpacity="0" />
-              <stop offset="1" stopColor="#10B981" />
+              <stop stopColor="#229D94" stopOpacity="0" />
+              <stop offset="1" stopColor="#229D94" />
             </linearGradient>
             <linearGradient
               id="paint3_linear_72:302"
@@ -170,8 +173,8 @@ const Testimonials = () => {
               y2="31.1572"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" stopOpacity="0" />
-              <stop offset="1" stopColor="#10B981" />
+              <stop stopColor="#229D94" stopOpacity="0" />
+              <stop offset="1" stopColor="#229D94" />
             </linearGradient>
           </defs>
         </svg>

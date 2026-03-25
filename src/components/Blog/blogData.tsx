@@ -3,45 +3,45 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: "Best UI components for modern websites",
+    title: "Why We Built Lumicade Solutions",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "The story behind our decision to build a software house that also ships its own SaaS products — and how that dual focus benefits our clients.",
     image: "/images/blog/blog-01.jpg",
     author: {
-      name: "Samuyl Joshi",
+      name: "Lumicade Team",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "Founding Team",
     },
-    tags: ["creative"],
-    publishDate: "2025",
+    tags: ["company"],
+    publishDate: "2026",
   },
   {
     id: 2,
-    title: "9 simple ways to improve your design skills",
+    title: "How We Approach AI Automation",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Our AI-first methodology explained: from identifying repetitive workflows to deploying intelligent pipelines that save real hours every week.",
     image: "/images/blog/blog-02.jpg",
     author: {
-      name: "Musharof Chy",
+      name: "Lumicade Team",
       image: "/images/blog/author-02.png",
-      designation: "Content Writer",
+      designation: "Engineering",
     },
-    tags: ["computer"],
-    publishDate: "2025",
+    tags: ["engineering"],
+    publishDate: "2026",
   },
   {
     id: 3,
-    title: "Tips to quickly improve your coding speed.",
+    title: "Building Cross-Platform Mobile Apps That Scale",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Lessons learned from shipping mobile applications across industries — from food delivery to enterprise fleet management.",
     image: "/images/blog/blog-03.jpg",
     author: {
-      name: "Lethium Deo",
+      name: "Lumicade Team",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "Engineering",
     },
-    tags: ["design"],
-    publishDate: "2025",
+    tags: ["mobile"],
+    publishDate: "2026",
   },
 ];
 export default blogData;

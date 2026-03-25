@@ -1,7 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import Blog from "@/components/Blog";
-import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
 import Features from "@/components/Features";
@@ -12,9 +11,8 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lumicade Solutions | Receipt OCR & AI Expense Insights",
-  description: "Scan receipts, extract data with OCR, stay 100% offline, and get AI insights. Lumicade Solutions helps you track spending fast—with CSV/Excel export and a $1/mo Pro plan.",
-  // other metadata
+  title: "Lumicade Solutions | Software House & SaaS Provider",
+  description: "We research, design, and develop IT solutions — from custom web systems and mobile apps to AI automation and our own subscription-based SaaS products. Based in Malaysia.",
 };
 
 export default function Home() {
@@ -24,7 +22,6 @@ export default function Home() {
       <Hero />
       <Features />
       <Video />
-      <Brands />
       <AboutSectionOne />
       <AboutSectionTwo />
       <Testimonials />

@@ -6,33 +6,33 @@ const NewsLatterBox = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
-      <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
+    <div className="shadow-card dark:bg-dark relative z-10 rounded-xl bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
+      <h3 className="mb-4 text-2xl leading-tight font-bold text-lumi-navy dark:text-lumi-offwhite">
         Subscribe to receive future updates
       </h3>
       <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
-       Join our community of privacy-conscious users. Get early access to new features, spending insights tips, and product updates—delivered monthly to your inbox. We'll never share your email or send spam
+        Stay in the loop with Lumicade Solutions. Get product updates, engineering insights, and early access to new tools — delivered monthly.
       </p>
       <div>
         <input
           type="text"
           name="name"
           placeholder="Enter your name"
-          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
+          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
         <input
           type="email"
           name="email"
           placeholder="Enter your email"
-          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
+          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
         <input
           type="submit"
           value="Subscribe"
-          className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300"
+          className="bg-primary hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-lg px-9 py-4 text-base font-medium text-lumi-offwhite duration-300"
         />
         <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
-          No spam guaranteed, So please don’t send any spam mail.
+          No spam. Unsubscribe anytime.
         </p>
       </div>
 
@@ -60,12 +60,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -96,12 +96,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -132,12 +132,12 @@ const NewsLatterBox = () => {
                 gradientUnits="userSpaceOnUse"
               >
                 <stop
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#229D94" : "#fff"}
                   stopOpacity="0.62"
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#229D94" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -164,16 +164,6 @@ const NewsLatterBox = () => {
                 d="M43 64.9999C50 52.3332 69.7 25.7999 92.5 20.9999C121 14.9999 137 16.9999 148 5.49986C159 -6.00014 168 -28.5001 191 -28.5001C214 -28.5001 229 -20.0001 242.5 -33.5001C256 -47.0001 252.5 -71.0001 286 -62.5001C312.8 -55.7001 349.167 -70 364 -78"
                 stroke="url(#paint1_linear_1028_603)"
               />
-              <path
-                opacity="0.45"
-                d="M4 73.9999C11 61.3332 30.7 34.7999 53.5 29.9999C82 23.9999 98 25.9999 109 14.4999C120 2.99986 129 -19.5001 152 -19.5001C175 -19.5001 190 -11.0001 203.5 -24.5001C217 -38.0001 213.5 -62.0001 247 -53.5001C273.8 -46.7001 310.167 -61 325 -69"
-                stroke="url(#paint2_linear_1028_603)"
-              />
-              <path
-                opacity="0.45"
-                d="M41 40.9999C48 28.3332 67.7 1.79986 90.5 -3.00014C119 -9.00014 135 -7.00014 146 -18.5001C157 -30.0001 166 -52.5001 189 -52.5001C212 -52.5001 227 -44.0001 240.5 -57.5001C254 -71.0001 250.5 -95.0001 284 -86.5001C310.8 -79.7001 347.167 -94 362 -102"
-                stroke="url(#paint3_linear_1028_603)"
-              />
             </g>
             <defs>
               <linearGradient
@@ -186,11 +176,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>
@@ -204,47 +194,11 @@ const NewsLatterBox = () => {
               >
                 <stop
                   offset="0.328125"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                 />
                 <stop
                   offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_1028_603"
-                x1="294.35"
-                y1="-3.89678"
-                x2="182.211"
-                y2="221.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
-                  stopOpacity="0"
-                />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_1028_603"
-                x1="331.35"
-                y1="-36.8968"
-                x2="219.211"
-                y2="188.617"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop
-                  offset="0.328125"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
-                />
-                <stop
-                  offset="1"
-                  stopColor={theme === "light" ? "#10B981" : "#fff"}
+                  stopColor={theme === "light" ? "#3352DA" : "#fff"}
                   stopOpacity="0"
                 />
               </linearGradient>

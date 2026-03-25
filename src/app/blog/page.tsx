@@ -1,94 +1,54 @@
-import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
+import Link from "next/link";
+import { getAllPosts } from "@/lib/blog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page | Lumicade",
-  description: "This is Blog Page for Lumicade Nextjs Template",
-  // other metadata
+  title: "Blog | Lumicade Solutions",
+  description: "Engineering insights, product updates, and lessons from building software across domains.",
 };
 
 const Blog = () => {
+  const posts = getAllPosts();
+
   return (
     <>
       <Breadcrumb
-        pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Blog"
+        description="Engineering insights, product updates, and lessons from building software across domains."
       />
 
       <section className="pt-[120px] pb-[120px]">
         <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
-            {blogData.map((blog) => (
-              <div
-                key={blog.id}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block rounded-xl border border-lumi-lightblue bg-white p-6 shadow-card transition-all duration-300 hover:border-primary hover:shadow-feature-2 dark:border-lumi-mutednav dark:bg-dark dark:hover:border-primary"
               >
-                <SingleBlog blog={blog} />
-              </div>
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-teal px-3 py-1 text-xs font-semibold text-lumi-offwhite"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-lumi-navy group-hover:text-primary dark:text-lumi-offwhite">
+                  {post.title}
+                </h3>
+                <p className="mb-4 text-base leading-relaxed text-body-color">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between text-sm text-body-color">
+                  <span>{post.date}</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </Link>
             ))}
-          </div>
-
-          <div className="-mx-4 flex flex-wrap" data-wow-delay=".15s">
-            <div className="w-full px-4">
-              <ul className="flex items-center justify-center pt-8">
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    Prev
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    1
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    2
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    3
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <span className="bg-body-color/15 text-body-color flex h-9 min-w-[36px] cursor-not-allowed items-center justify-center rounded-md px-4 text-sm">
-                    ...
-                  </span>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    12
-                  </a>
-                </li>
-                <li className="mx-1">
-                  <a
-                    href="#0"
-                    className="bg-body-color/15 text-body-color hover:bg-primary flex h-9 min-w-[36px] items-center justify-center rounded-md px-4 text-sm transition hover:text-white"
-                  >
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
