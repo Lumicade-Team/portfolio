@@ -103,90 +103,8 @@ export default async function BlogPage() {
             </div>
           ) : (
             <>
-              {/* ── Featured post ── */}
-              <Link
-                href={`/blog/${posts[0].slug}`}
-                className="group relative mb-16 block overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-500 hover:shadow-feature-2 dark:bg-dark md:flex md:min-h-[380px]"
-              >
-                {/* Gradient border effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 via-teal/20 to-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ padding: "1px" }}>
-                  <div className="h-full w-full rounded-2xl bg-white dark:bg-dark" />
-                </div>
-
-                <div className="relative z-10 flex flex-col md:flex-row">
-                  {/* Image */}
-                  <div className="relative w-full overflow-hidden md:w-[55%]">
-                    {posts[0].coverImage ? (
-                      <img
-                        src={posts[0].coverImage}
-                        alt={posts[0].title}
-                        className="h-full min-h-[240px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] md:min-h-[380px]"
-                      />
-                    ) : (
-                      <div className="flex h-full min-h-[240px] w-full items-center justify-center bg-gradient-to-br from-lumi-navy via-primary/20 to-lumi-navy md:min-h-[380px]">
-                        <div className="relative">
-                          <div className="h-24 w-24 rounded-2xl border border-primary/20 bg-primary/5" />
-                          <div className="absolute -bottom-3 -right-3 h-24 w-24 rounded-2xl border border-teal/20 bg-teal/5" />
-                        </div>
-                      </div>
-                    )}
-                    {/* Featured label */}
-                    <div className="absolute top-5 left-5 flex items-center gap-2 rounded-full bg-lumi-navy/80 px-3.5 py-1.5 backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-teal animate-pulse" />
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-lumi-offwhite">Latest</span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex flex-1 flex-col justify-center p-8 md:p-12">
-                    <div className="mb-5 flex flex-wrap gap-2">
-                      {posts[0].tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-md border border-teal/20 bg-teal/5 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-teal"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h2 className="mb-4 text-2xl font-extrabold leading-tight text-lumi-navy transition-colors duration-300 group-hover:text-primary dark:text-lumi-offwhite sm:text-3xl lg:text-[32px]">
-                      {posts[0].title}
-                    </h2>
-
-                    <p className="mb-8 max-w-[440px] text-base leading-relaxed text-body-color dark:text-body-color-dark line-clamp-3">
-                      {posts[0].excerpt}
-                    </p>
-
-                    <div className="mt-auto flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-sm text-body-color dark:text-body-color-dark">
-                        <span>{posts[0].date}</span>
-                        <span className="text-body-color dark:text-body-color-dark/30">|</span>
-                        <span>{posts[0].readTime}</span>
-                      </div>
-                      <span className="flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-[-8px]">
-                        Read
-                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-
-              {/* ── Grid ── */}
-              {posts.length > 1 && (
-                <>
-                  <div className="mb-12 flex items-center gap-4">
-                    <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-lumi-navy dark:text-lumi-offwhite">
-                      All Articles
-                    </h2>
-                    <div className="h-px flex-1 bg-gradient-to-r from-stroke-stroke to-transparent dark:from-lumi-mutednav" />
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {posts.slice(1).map((post, i) => (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {posts.map((post, i) => (
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
@@ -247,9 +165,7 @@ export default async function BlogPage() {
                         </div>
                       </Link>
                     ))}
-                  </div>
-                </>
-              )}
+              </div>
             </>
           )}
         </div>

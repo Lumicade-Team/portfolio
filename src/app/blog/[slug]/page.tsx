@@ -2,7 +2,6 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import PortableTextBody from "@/components/Blog/PortableText";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -134,9 +133,10 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="container">
           <div className="mx-auto max-w-[820px]">
             {/* Reading progress context */}
-            <article>
-              <PortableTextBody body={post.body} />
-            </article>
+            <article
+              className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-lumi-navy dark:prose-headings:text-lumi-offwhite prose-p:text-body-color dark:prose-p:text-body-color-dark prose-a:text-primary prose-a:font-semibold prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary prose-blockquote:border-l-[3px] prose-blockquote:border-primary prose-blockquote:bg-primary/[0.03] prose-blockquote:rounded-r-xl prose-img:rounded-xl prose-img:shadow-card prose-code:text-primary prose-pre:bg-[#0d1520] prose-pre:rounded-xl prose-strong:text-lumi-navy dark:prose-strong:text-lumi-offwhite prose-li:text-body-color dark:prose-li:text-body-color-dark prose-li:marker:text-primary"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
             {/* ── Article footer ── */}
             <div className="mt-20 border-t border-stroke-stroke pt-10 dark:border-lumi-mutednav/50">
