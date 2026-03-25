@@ -96,12 +96,12 @@ export default function AdminLoginPage() {
             <h1 className="text-xl font-bold text-lumi-navy dark:text-lumi-offwhite">
               Admin Login
             </h1>
-            <p className="mt-1 text-sm text-body-color">
+            <p className="mt-1 text-sm text-body-color dark:text-body-color-dark">
               Sign in to manage your blog
             </p>
           </div>
 
-          <Suspense fallback={<div className="py-8 text-center text-body-color">Loading...</div>}>
+          <Suspense fallback={<div className="py-8 text-center text-body-color dark:text-body-color-dark">Loading...</div>}>
             <LoginForm />
           </Suspense>
         </div>

@@ -72,12 +72,12 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="mb-5 list-disc space-y-2 pl-6 text-lg text-body-color marker:text-primary dark:text-body-color-dark">
+      <ul className="mb-5 list-disc space-y-2 pl-6 text-lg text-body-color dark:text-body-color-dark marker:text-primary dark:text-body-color-dark">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="mb-5 list-decimal space-y-2 pl-6 text-lg text-body-color marker:text-primary dark:text-body-color-dark">
+      <ol className="mb-5 list-decimal space-y-2 pl-6 text-lg text-body-color dark:text-body-color-dark marker:text-primary dark:text-body-color-dark">
         {children}
       </ol>
     ),

@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                 {/* Tags */}
                 <div>
-                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-body-color/60 dark:text-body-color-dark/60">
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-body-color dark:text-body-color-dark/60 dark:text-body-color-dark/60">
                     Tagged in
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: Props) {
                       {related.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-semibold uppercase tracking-wider text-body-color/50 dark:text-body-color-dark/50"
+                          className="text-[10px] font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark/50 dark:text-body-color-dark/50"
                         >
                           {tag}
                         </span>
@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <p className="flex-1 text-sm leading-relaxed text-body-color dark:text-body-color-dark line-clamp-2">
                       {related.excerpt}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-xs text-body-color/60 dark:text-body-color-dark/60">
+                    <div className="mt-4 flex items-center gap-2 text-xs text-body-color dark:text-body-color-dark/60 dark:text-body-color-dark/60">
                       <span>{related.date}</span>
                       <span>&middot;</span>
                       <span>{related.readTime}</span>

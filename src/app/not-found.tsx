@@ -9,7 +9,7 @@ export default function NotFound() {
           <h3 className="mb-4 text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite">
             Page Not Found
           </h3>
-          <p className="mb-10 text-base text-body-color">
+          <p className="mb-10 text-base text-body-color dark:text-body-color-dark">
             The page you are looking for doesn&apos;t exist or has been moved.
           </p>
           <Link

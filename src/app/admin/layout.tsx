@@ -46,7 +46,7 @@ export default function AdminLayout({
                 className={`text-sm font-medium transition ${
                   pathname === "/admin"
                     ? "text-primary"
-                    : "text-body-color hover:text-primary"
+                    : "text-body-color dark:text-body-color-dark hover:text-primary"
                 }`}
               >
                 All Posts
@@ -56,7 +56,7 @@ export default function AdminLayout({
                 className={`text-sm font-medium transition ${
                   pathname === "/admin/posts/new"
                     ? "text-primary"
-                    : "text-body-color hover:text-primary"
+                    : "text-body-color dark:text-body-color-dark hover:text-primary"
                 }`}
               >
                 New Post
@@ -66,13 +66,13 @@ export default function AdminLayout({
           <div className="flex items-center gap-4">
             <Link
               href="/"
-              className="text-sm font-medium text-body-color hover:text-primary"
+              className="text-sm font-medium text-body-color dark:text-body-color-dark hover:text-primary"
             >
               View Site
             </Link>
             <button
               onClick={handleLogout}
-              className="rounded-lg border border-stroke-stroke px-4 py-1.5 text-sm font-medium text-body-color transition hover:border-red-500 hover:text-red-500 dark:border-lumi-mutednav"
+              className="rounded-lg border border-stroke-stroke px-4 py-1.5 text-sm font-medium text-body-color dark:text-body-color-dark transition hover:border-red-500 hover:text-red-500 dark:border-lumi-mutednav"
             >
               Logout
             </button>

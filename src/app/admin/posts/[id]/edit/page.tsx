@@ -27,13 +27,13 @@ export default function EditPostPage() {
 
   if (loading) {
     return (
-      <div className="py-20 text-center text-body-color">Loading post...</div>
+      <div className="py-20 text-center text-body-color dark:text-body-color-dark">Loading post...</div>
     );
   }
 
   if (!post) {
     return (
-      <div className="py-20 text-center text-body-color">Post not found.</div>
+      <div className="py-20 text-center text-body-color dark:text-body-color-dark">Post not found.</div>
     );
   }
 

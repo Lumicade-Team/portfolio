@@ -24,13 +24,13 @@ const NewsLatterBox = () => {
           type="text"
           name="name"
           placeholder="Enter your name"
-          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
+          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
         <input
           type="email"
           name="email"
           placeholder="Enter your email"
-          className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
+          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
         <input
           type="submit"

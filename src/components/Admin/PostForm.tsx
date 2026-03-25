@@ -255,7 +255,7 @@ export default function PostForm({ post }: { post?: BlogPost }) {
           <button
             type="button"
             onClick={() => router.push("/admin")}
-            className="rounded-lg border border-stroke-stroke px-6 py-2.5 text-sm font-medium text-body-color transition hover:border-primary hover:text-primary dark:border-lumi-mutednav"
+            className="rounded-lg border border-stroke-stroke px-6 py-2.5 text-sm font-medium text-body-color dark:text-body-color-dark transition hover:border-primary hover:text-primary dark:border-lumi-mutednav"
           >
             Cancel
           </button>

@@ -54,7 +54,7 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite">
             Blog Posts
           </h1>
-          <p className="mt-1 text-sm text-body-color">
+          <p className="mt-1 text-sm text-body-color dark:text-body-color-dark">
             Manage your blog content
           </p>
         </div>
@@ -67,10 +67,10 @@ export default function AdminDashboard() {
       </div>
 
       {loading ? (
-        <div className="py-20 text-center text-body-color">Loading posts...</div>
+        <div className="py-20 text-center text-body-color dark:text-body-color-dark">Loading posts...</div>
       ) : posts.length === 0 ? (
         <div className="rounded-xl border border-dashed border-stroke-stroke py-20 text-center dark:border-lumi-mutednav">
-          <p className="mb-4 text-body-color">No blog posts yet.</p>
+          <p className="mb-4 text-body-color dark:text-body-color-dark">No blog posts yet.</p>
           <Link
             href="/admin/posts/new"
             className="text-sm font-medium text-primary hover:text-primary/80"
@@ -83,19 +83,19 @@ export default function AdminDashboard() {
           <table className="w-full">
             <thead>
               <tr className="border-b border-stroke-stroke bg-lumi-lightblue dark:border-lumi-mutednav dark:bg-lumi-navy">
-                <th className="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color">
+                <th className="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark">
                   Title
                 </th>
-                <th className="hidden px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color md:table-cell">
+                <th className="hidden px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark md:table-cell">
                   Tags
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color">
+                <th className="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark">
                   Status
                 </th>
-                <th className="hidden px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color sm:table-cell">
+                <th className="hidden px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark sm:table-cell">
                   Date
                 </th>
-                <th className="px-6 py-3 text-right text-xs font-semibold uppercase tracking-wider text-body-color">
+                <th className="px-6 py-3 text-right text-xs font-semibold uppercase tracking-wider text-body-color dark:text-body-color-dark">
                   Actions
                 </th>
               </tr>
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
                     >
                       {post.title}
                     </Link>
-                    <p className="mt-0.5 text-xs text-body-color">
+                    <p className="mt-0.5 text-xs text-body-color dark:text-body-color-dark">
                       /{post.slug}
                     </p>
                   </td>
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
                       {post.published ? "Published" : "Draft"}
                     </button>
                   </td>
-                  <td className="hidden px-6 py-4 text-sm text-body-color sm:table-cell">
+                  <td className="hidden px-6 py-4 text-sm text-body-color dark:text-body-color-dark sm:table-cell">
                     {new Date(post.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-right">

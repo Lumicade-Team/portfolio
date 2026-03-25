@@ -29,7 +29,7 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Enter your name"
-                        className="border-stroke w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
+                        className="border-stroke w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color dark:text-body-color-dark outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
                       />
                     </div>
                   </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className="border-stroke w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
+                        className="border-stroke w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color dark:text-body-color-dark outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
                       />
                     </div>
                   </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                         name="message"
                         rows={5}
                         placeholder="Tell us about your project"
-                        className="border-stroke w-full resize-none rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
+                        className="border-stroke w-full resize-none rounded-md border bg-lumi-offwhite px-6 py-3 text-base text-body-color dark:text-body-color-dark outline-hidden focus:border-primary dark:border-lumi-mutednav dark:bg-lumi-navy dark:text-body-color-dark dark:focus:border-primary"
                       ></textarea>
                     </div>
                   </div>

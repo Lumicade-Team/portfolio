@@ -161,7 +161,7 @@ export default async function BlogPage() {
                     <div className="mt-auto flex items-center justify-between">
                       <div className="flex items-center gap-3 text-sm text-body-color dark:text-body-color-dark">
                         <span>{posts[0].date}</span>
-                        <span className="text-body-color/30">|</span>
+                        <span className="text-body-color dark:text-body-color-dark/30">|</span>
                         <span>{posts[0].readTime}</span>
                       </div>
                       <span className="flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 translate-x-[-8px]">
@@ -235,7 +235,7 @@ export default async function BlogPage() {
                             {post.excerpt}
                           </p>
 
-                          <div className="flex items-center justify-between text-xs text-body-color/70">
+                          <div className="flex items-center justify-between text-xs text-body-color dark:text-body-color-dark/70">
                             <span>{post.date}</span>
                             <div className="flex items-center gap-1.5">
                               <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
