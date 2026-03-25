@@ -5,11 +5,11 @@ import featuresData from "./featuresData";
 const Features = () => {
   return (
     <>
-      <section id="features" className="py-16 md:py-20 lg:py-28">
+      <section id="services" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Everything you need to tame receipts"
-            paragraph="Capture receipts with the camera, extract text with OCR, edit and store locally, then ask natural-language questions for instant insights. Works fully offline."
+            title="What We Do"
+            paragraph="From web apps and mobile platforms to AI automation and our own SaaS products — we deliver end-to-end solutions across domains and industries."
             center
           />
 

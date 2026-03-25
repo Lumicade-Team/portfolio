@@ -1,74 +1,85 @@
-import Image from "next/image";
-import SectionTitle from "../Common/SectionTitle";
-
-const checkIcon = (
-  <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
-    <path d="M5.8535 12.6631C5.65824 12.8584 5.34166 12.8584 5.1464 12.6631L0.678505 8.1952C0.483242 7.99994 0.483242 7.68336 0.678505 7.4881L2.32921 5.83739C2.52467 5.64193 2.84166 5.64216 3.03684 5.83791L5.14622 7.95354C5.34147 8.14936 5.65859 8.14952 5.85403 7.95388L13.3797 0.420561C13.575 0.22513 13.8917 0.225051 14.087 0.420383L15.7381 2.07143C15.9333 2.26669 15.9333 2.58327 15.7381 2.77854L5.8535 12.6631Z" />
-  </svg>
-);
+import { stats } from "./aboutData";
+import ProcessSteps from "./ProcessSteps";
 
 const AboutSectionOne = () => {
-  const List = ({ text }) => (
-    <p className="text-body-color mb-5 flex items-center text-lg font-medium">
-      <span className="bg-primary/10 text-primary mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md">
-        {checkIcon}
-      </span>
-      {text}
-    </p>
-  );
-
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
-      <div className="container">
-        <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
-              <SectionTitle
-                title="Built by Lumicade Solutions for effortless expense tracking"
-                paragraph="Our mission is simple: make it blazing fast to capture receipts, extract clean data, and get answers about your spending—without giving up privacy."
-                mb="44px"
-              />
+    <>
+      {/* ── Hero ── */}
+      <section id="about" className="relative isolate overflow-hidden bg-lumi-navy pt-[160px] pb-24 md:pb-32">
+        {/* Background layers */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-primary/[0.06] blur-[120px]" />
+          <div className="absolute -bottom-40 -left-32 h-[500px] w-[500px] rounded-full bg-teal/[0.05] blur-[100px]" />
+          <svg className="absolute inset-0 h-full w-full opacity-[0.025]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="aboutGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+                <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#F4F7FF" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#aboutGrid)" />
+          </svg>
+          <div className="absolute top-0 left-[20%] h-full w-px bg-gradient-to-b from-transparent via-primary/15 to-transparent" />
+          <div className="absolute top-0 right-[25%] h-full w-px bg-gradient-to-b from-transparent via-teal/10 to-transparent" />
+        </div>
 
-              <div
-                className="mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
-                <div className="mx-[-12px] flex flex-wrap">
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="On-device OCR" />
-                    <List text="Local-first (SQLite)" />
-                    <List text="Works fully offline" />
-                  </div>
-
-                  <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Edit and review quickly" />
-                    <List text="Filter and search receipts" />
-                    <List text="Export CSV/Excel" />
-                  </div>
-                </div>
+        <div className="container relative z-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+            {/* Left — story */}
+            <div>
+              <div className="mb-6 flex items-center gap-3">
+                <span className="h-px w-10 bg-teal" />
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
+                  About Us
+                </span>
               </div>
+
+              <h1 className="mb-8 text-4xl font-extrabold leading-[1.1] text-lumi-offwhite sm:text-5xl md:text-[52px]">
+                Software built with
+                <span className="relative ml-2 inline-block">
+                  <span className="relative z-10">intent</span>
+                  <span className="absolute bottom-1 left-0 -z-0 h-3 w-full bg-primary/30 md:bottom-2 md:h-4" />
+                </span>
+              </h1>
+
+              <p className="mb-6 max-w-[520px] text-lg leading-[1.8] text-body-color-dark/80">
+                Lumicade Solutions is a Malaysia-based software house and SaaS provider. We don&apos;t just write code — we research your domain, design with purpose, build with precision, and deliver systems that scale.
+              </p>
+
+              <p className="max-w-[520px] text-base leading-[1.8] text-body-color-dark/60">
+                From custom web platforms and mobile apps to AI-powered automation and our own subscription-based microservices — every project gets the same rigour, regardless of size.
+              </p>
             </div>
 
-            <div className="w-full px-4 lg:w-1/2">
-              <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
-                <Image
-                  src="/images/about/about-image.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/about-image-dark.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
-                />
+            {/* Right — stats grid */}
+            <div className="flex items-center">
+              <div className="grid w-full grid-cols-2 gap-4">
+                {stats.map((stat, i) => (
+                  <div
+                    key={stat.label}
+                    className={`rounded-2xl border p-7 transition-all duration-300 hover:border-primary/40 ${
+                      i % 2 === 0
+                        ? "border-lumi-mutednav/40 bg-lumi-mutednav/10"
+                        : "border-primary/20 bg-primary/[0.04]"
+                    }`}
+                  >
+                    <p className={`mb-1 text-3xl font-extrabold tracking-tight ${
+                      i % 2 === 0 ? "text-teal" : "text-primary"
+                    }`}>
+                      {stat.value}
+                    </p>
+                    <p className="text-sm text-body-color-dark/60">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      </section>
+
+      <ProcessSteps />
+    </>
   );
 };
 
