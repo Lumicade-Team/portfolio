@@ -153,12 +153,7 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/contact"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-lg px-8 py-3 text-base font-medium text-lumi-offwhite transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Get In Touch
-                </Link>
+              
                 <div>
                   <ThemeToggler />
                 </div>
