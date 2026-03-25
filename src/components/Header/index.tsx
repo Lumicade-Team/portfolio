@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header top-0 left-0 z-40 flex w-full items-center ${
+        className={`header top-0 left-0 z-40 flex w-full items-center h-24 ${
           sticky
             ? "dark:bg-gray-dark dark:shadow-sticky-dark shadow-sticky fixed z-9999 bg-white/80 backdrop-blur-xs transition"
             : "absolute bg-transparent"
@@ -60,8 +60,8 @@ const Header = () => {
                 <Image
                   src="/assets/imgs/Lumicade-Solutions-Logo-4096.svg"
                   alt="Lumicade Solutions"
-                  width={160}
-                  height={160}
+                  width={60}
+                  height={60}
                   className={`transition-all duration-300 ${sticky ? "h-[100px] w-[100px]" : "h-[140px] w-[140px]"}`}
                 />
               </Link>

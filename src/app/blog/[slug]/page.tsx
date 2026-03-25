@@ -1,21 +1,22 @@
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
 
   return {
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   return (
@@ -61,9 +62,20 @@ export default async function BlogPostPage({ params }: Props) {
             <span>{post.readTime}</span>
           </div>
 
-          <article className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-lumi-navy dark:prose-headings:text-lumi-offwhite prose-a:text-primary">
-            <MDXRemote source={post.content} />
-          </article>
+          {post.coverImage && (
+            <div className="mb-10 overflow-hidden rounded-xl">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full object-cover"
+              />
+            </div>
+          )}
+
+          <article
+            className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-lumi-navy dark:prose-headings:text-lumi-offwhite prose-a:text-primary"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
       </div>
     </section>

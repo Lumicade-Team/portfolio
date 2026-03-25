@@ -1,9 +1,4 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import readingTime from "reading-time";
-
-const postsDirectory = path.join(process.cwd(), "posts");
+import { supabase, BlogPost as SupabaseBlogPost } from "./supabase";
 
 export type BlogPost = {
   slug: string;
@@ -13,51 +8,47 @@ export type BlogPost = {
   tags: string[];
   readTime: string;
   content: string;
+  coverImage: string | null;
 };
 
-export function getAllPosts(): BlogPost[] {
-  if (!fs.existsSync(postsDirectory)) return [];
-
-  const fileNames = fs.readdirSync(postsDirectory);
-  const posts = fileNames
-    .filter((name) => name.endsWith(".mdx"))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, "");
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data, content } = matter(fileContents);
-      const stats = readingTime(content);
-
-      return {
-        slug,
-        title: data.title || slug,
-        date: data.date || "",
-        excerpt: data.excerpt || "",
-        tags: data.tags || [],
-        readTime: stats.text,
-        content,
-      };
-    })
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
-
-  return posts;
+function estimateReadTime(text: string): string {
+  const words = text.replace(/<[^>]*>/g, "").split(/\s+/).length;
+  const minutes = Math.max(1, Math.ceil(words / 200));
+  return `${minutes} min read`;
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  if (!fs.existsSync(fullPath)) return null;
-
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-  const stats = readingTime(content);
-
+function mapSupabasePost(post: SupabaseBlogPost): BlogPost {
   return {
-    slug,
-    title: data.title || slug,
-    date: data.date || "",
-    excerpt: data.excerpt || "",
-    tags: data.tags || [],
-    readTime: stats.text,
-    content,
+    slug: post.slug,
+    title: post.title,
+    date: new Date(post.created_at).toISOString().split("T")[0],
+    excerpt: post.excerpt,
+    tags: post.tags || [],
+    readTime: estimateReadTime(post.content),
+    content: post.content,
+    coverImage: post.cover_image,
   };
+}
+
+export async function getAllPosts(): Promise<BlogPost[]> {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("published", true)
+    .order("created_at", { ascending: false });
+
+  if (error || !data) return [];
+  return data.map(mapSupabasePost);
+}
+
+export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("slug", slug)
+    .eq("published", true)
+    .single();
+
+  if (error || !data) return null;
+  return mapSupabasePost(data);
 }
