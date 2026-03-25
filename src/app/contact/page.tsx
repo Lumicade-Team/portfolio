@@ -4,17 +4,16 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Page | Lumicade",
-  description: "This is Contact Page for Lumicade Nextjs Template",
-  // other metadata
+  title: "Contact | Lumicade Solutions",
+  description: "Have a project in mind? Get in touch with Lumicade Solutions — we build custom web systems, mobile apps, AI workflows, and SaaS products.",
 };
 
 const ContactPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Contact Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        pageName="Contact Us"
+        description="Have a project in mind? Whether it's a custom system, mobile app, or AI workflow — reach out and let's build it together."
       />
 
       <Contact />

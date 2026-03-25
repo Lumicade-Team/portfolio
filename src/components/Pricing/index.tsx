@@ -1,90 +1,20 @@
-"use client";
-import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import OfferList from "./OfferList";
-import PricingBox from "./PricingBox";
+import FaqAccordion from "./FaqAccordion";
+import PricingCards from "./PricingCard";
 
 const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-
   return (
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Simple, honest pricing"
-          paragraph="Free tier: limited scans and basic analytics. Pro: full access for $1/month or $10/year."
+          title="How We Work With You"
+          paragraph="Two flexible engagement models to match how your business operates."
           center
           width="665px"
         />
 
-        <div className="w-full">
-          <div className="mb-8 flex justify-center md:mb-12 lg:mb-16">
-            <span
-              onClick={() => setIsMonthly(true)}
-              className={`${
-                isMonthly
-                  ? "pointer-events-none text-primary"
-                  : "text-dark dark:text-white"
-              } mr-4 cursor-pointer text-base font-semibold`}
-            >
-              $1/mo
-            </span>
-            <div
-              onClick={() => setIsMonthly(!isMonthly)}
-              className="flex cursor-pointer items-center"
-            >
-              <div className="relative">
-                <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
-                <div
-                  className={`${
-                    isMonthly ? "" : "translate-x-full"
-                  } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
-                >
-                  <span className="active h-4 w-4 rounded-full bg-white"></span>
-                </div>
-              </div>
-            </div>
-            <span
-              onClick={() => setIsMonthly(false)}
-              className={`${
-                isMonthly
-                  ? "text-dark dark:text-white"
-                  : "pointer-events-none text-primary"
-              } ml-4 cursor-pointer text-base font-semibold`}
-            >
-              $10/yr
-            </span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
-          <PricingBox
-            packageName="Free"
-            price={"0"}
-            duration={""}
-            subtitle="For getting started: limited scans and basic analytics."
-          >
-            <OfferList text="Limited monthly scans" status="active" />
-            <OfferList text="Basic analytics" status="active" />
-            <OfferList text="Local SQLite storage" status="active" />
-            <OfferList text="Manual edit of fields" status="active" />
-            <OfferList text="CSV/Excel export" status="inactive" />
-            <OfferList text="AI insights" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Pro"
-            price={isMonthly ? "1" : "10"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Full access to all features: unlimited scans, AI insights, and export."
-          >
-            <OfferList text="Unlimited scans" status="active" />
-            <OfferList text="Advanced analytics" status="active" />
-            <OfferList text="AI insights (OpenAI/Claude/Gemini)" status="active" />
-            <OfferList text="CSV/Excel export + email share" status="active" />
-            <OfferList text="Priority support" status="active" />
-            <OfferList text="Offline-first, privacy-first" status="active" />
-          </PricingBox>
-        </div>
+        <PricingCards />
+        <FaqAccordion />
       </div>
 
       <div className="absolute bottom-0 left-0 z-[-1]">
@@ -124,8 +54,8 @@ const Pricing = () => {
               y2="1131.65"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" />
-              <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+              <stop stopColor="#3352DA" />
+              <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_93:235"
@@ -135,8 +65,8 @@ const Pricing = () => {
               y2="915.952"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#10B981" />
-              <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+              <stop stopColor="#3352DA" />
+              <stop offset="1" stopColor="#3352DA" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>

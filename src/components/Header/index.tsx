@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState, useCallback } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
@@ -24,11 +24,12 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-  });
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
+  }, []);
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
+  const handleSubmenu = (index: number) => {
     if (openIndex === index) {
       setOpenIndex(-1);
     } else {
@@ -36,12 +37,77 @@ const Header = () => {
     }
   };
 
-  const usePathName = usePathname();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Track active section based on scroll position
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const sectionIds = ["home", "services", "products", "about", "testimonials", "pricing", "blog", "contact"];
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 120;
+      let current = "";
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
+
+  // Handle nav link clicks — smooth scroll for anchor links
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+      // Close mobile menu
+      setNavbarOpen(false);
+
+      // If it's a hash link on the homepage
+      if (path.startsWith("/#")) {
+        const hash = path.slice(2);
+
+        if (pathname === "/") {
+          // Already on homepage — just scroll
+          e.preventDefault();
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+        // If not on homepage, let Next.js navigate to /#hash (browser will scroll after load)
+      }
+    },
+    [pathname],
+  );
+
+  // Check if a menu item is active
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/" && (!activeSection || activeSection === "home");
+    }
+    if (path.startsWith("/#")) {
+      return pathname === "/" && activeSection === path.slice(2);
+    }
+    return pathname === path;
+  };
 
   return (
     <>
       <header
-        className={`header top-0 left-0 z-40 flex w-full items-center ${
+        className={`header top-0 left-0 z-40 flex w-full items-center h-24 ${
           sticky
             ? "dark:bg-gray-dark dark:shadow-sticky-dark shadow-sticky fixed z-9999 bg-white/80 backdrop-blur-xs transition"
             : "absolute bg-transparent"
@@ -49,26 +115,19 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+            <div className="max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
+                className={`header-logo flex items-center ${
+                  sticky ? "py-2 lg:py-1" : "py-3"
                 } `}
               >
                 <Image
-                  src="/images/lumicade/Lumicade-Gold-Black.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                />
-                <Image
-                  src="/images/lumicade/Lumicade-Gold-White.png"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
+                  src="/assets/imgs/Lumicade-Solutions-Logo-4096.svg"
+                  alt="Lumicade Solutions"
+                  width={60}
+                  height={60}
+                  className={`transition-all duration-300 ${sticky ? "h-[100px] w-[100px]" : "h-[140px] w-[140px]"}`}
                 />
               </Link>
             </div>
@@ -110,8 +169,9 @@ const Header = () => {
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
+                            onClick={(e) => handleNavClick(e, menuItem.path!)}
                             className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
+                              isActive(menuItem.path)
                                 ? "text-primary dark:text-white"
                                 : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
                             }`}
@@ -141,10 +201,10 @@ const Header = () => {
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
-                              {menuItem.submenu.map((submenuItem, index) => (
+                              {menuItem.submenu?.map((submenuItem, subIndex) => (
                                 <Link
-                                  href={submenuItem.path}
-                                  key={index}
+                                  href={submenuItem.path!}
+                                  key={subIndex}
                                   className="text-dark hover:text-primary block rounded-sm py-2.5 text-sm lg:px-3 dark:text-white/70 dark:hover:text-white"
                                 >
                                   {submenuItem.title}
@@ -159,18 +219,7 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+
                 <div>
                   <ThemeToggler />
                 </div>
