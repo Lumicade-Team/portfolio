@@ -24,7 +24,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="relative z-10 bg-lumi-navy py-16 md:py-20 lg:py-28">
+    <section id="products" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
           title="Our Own Suite of Tools"

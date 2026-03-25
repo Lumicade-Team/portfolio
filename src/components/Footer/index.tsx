@@ -126,7 +126,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/about"
+                      href="/#about"
                       className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
                     >
                       About
@@ -142,7 +142,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/#contact"
                       className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
                     >
                       Contact
@@ -160,7 +160,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/#contact"
                       className="mb-4 inline-block text-base text-body-color-dark duration-300 hover:text-primary"
                     >
                       Open Support Ticket
