@@ -16,7 +16,7 @@ const NewsLatterBox = () => {
       <h3 className="mb-4 text-2xl leading-tight font-bold text-lumi-navy dark:text-lumi-offwhite">
         Subscribe to receive future updates
       </h3>
-      <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
+      <p className="border-body-color/25 text-body-color dark:text-body-color-dark mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
         Stay in the loop with Lumicade Solutions. Get product updates, engineering insights, and early access to new tools — delivered monthly.
       </p>
       <div>

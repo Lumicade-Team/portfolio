@@ -39,23 +39,23 @@ const Pricing = () => {
             <h3 className="mb-2 text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite">
               Project-Based
             </h3>
-            <p className="mb-6 text-body-color">
+            <p className="mb-6 text-body-color dark:text-body-color-dark">
               Custom quote per client requirement
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
                 Discovery, design, development, and deployment
               </li>
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
                 Web apps, mobile apps, dashboards, AI pipelines
               </li>
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
@@ -75,23 +75,23 @@ const Pricing = () => {
             <h3 className="mb-2 text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite">
               Subscription
             </h3>
-            <p className="mb-6 text-body-color">
+            <p className="mb-6 text-body-color dark:text-body-color-dark">
               Monthly access to Lumicade SaaS microservices
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
                 OCR API, and more tools coming soon
               </li>
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
                 Cancel anytime — no long-term contracts
               </li>
-              <li className="flex items-start text-body-color">
+              <li className="flex items-start text-body-color dark:text-body-color-dark">
                 <span className="mr-3 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal">
                   <svg width="10" height="8" viewBox="0 0 8 6" className="fill-current"><path d="M2.90567 6.00024C2.68031 6.00024 2.48715 5.92812 2.294 5.74764L0.169254 3.43784C-0.0560926 3.18523-0.0560926 2.78827 0.169254 2.53566C0.39461 2.28298 0.74873 2.28298 0.974086 2.53566L2.90567 4.66497L7.02642 0.189715C7.25175-0.062913 7.60585-0.062913 7.83118 0.189715C8.0566 0.442354 8.0566 0.839355 7.83118 1.09198L3.54957 5.78375C3.32415 5.92812 3.09882 6.00024 2.90567 6.00024Z" /></svg>
                 </span>
@@ -125,7 +125,7 @@ const Pricing = () => {
                   <span className="text-base font-semibold text-lumi-navy dark:text-lumi-offwhite">
                     {faq.question}
                   </span>
-                  <span className="ml-4 shrink-0 text-body-color">
+                  <span className="ml-4 shrink-0 text-body-color dark:text-body-color-dark">
                     {openFaq === index ? (
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
                     ) : (
@@ -135,7 +135,7 @@ const Pricing = () => {
                 </button>
                 {openFaq === index && (
                   <div className="px-6 pb-5">
-                    <p className="text-base leading-relaxed text-body-color">
+                    <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
                       {faq.answer}
                     </p>
                   </div>

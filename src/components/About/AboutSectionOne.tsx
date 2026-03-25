@@ -141,7 +141,7 @@ const AboutSectionOne = () => {
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-body-color">
+                <p className="text-sm leading-relaxed text-body-color dark:text-body-color-dark">
                   {step.description}
                 </p>
 

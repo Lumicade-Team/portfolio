@@ -141,7 +141,7 @@ const AboutSectionTwo = () => {
                 Tools we ship with
               </h2>
 
-              <p className="mb-8 max-w-[440px] text-base leading-relaxed text-body-color">
+              <p className="mb-8 max-w-[440px] text-base leading-relaxed text-body-color dark:text-body-color-dark">
                 We pick the right tool for the job — not the trendiest. Here&apos;s what we reach for most.
               </p>
 

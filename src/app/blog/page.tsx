@@ -97,7 +97,7 @@ export default async function BlogPage() {
               <h2 className="mb-2 text-xl font-bold text-lumi-navy dark:text-lumi-offwhite">
                 First post incoming
               </h2>
-              <p className="text-sm leading-relaxed text-body-color">
+              <p className="text-sm leading-relaxed text-body-color dark:text-body-color-dark">
                 We&apos;re crafting something worth reading. Subscribe to get notified when we publish.
               </p>
             </div>
@@ -154,12 +154,12 @@ export default async function BlogPage() {
                       {posts[0].title}
                     </h2>
 
-                    <p className="mb-8 max-w-[440px] text-base leading-relaxed text-body-color line-clamp-3">
+                    <p className="mb-8 max-w-[440px] text-base leading-relaxed text-body-color dark:text-body-color-dark line-clamp-3">
                       {posts[0].excerpt}
                     </p>
 
                     <div className="mt-auto flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-sm text-body-color">
+                      <div className="flex items-center gap-3 text-sm text-body-color dark:text-body-color-dark">
                         <span>{posts[0].date}</span>
                         <span className="text-body-color/30">|</span>
                         <span>{posts[0].readTime}</span>
@@ -231,7 +231,7 @@ export default async function BlogPage() {
                             {post.title}
                           </h3>
 
-                          <p className="mb-5 flex-1 text-sm leading-relaxed text-body-color line-clamp-2">
+                          <p className="mb-5 flex-1 text-sm leading-relaxed text-body-color dark:text-body-color-dark line-clamp-2">
                             {post.excerpt}
                           </p>
 

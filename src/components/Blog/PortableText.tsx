@@ -13,7 +13,7 @@ const components: PortableTextComponents = {
             className="w-full rounded-xl shadow-[0_4px_24px_rgba(51,82,218,0.1)]"
           />
           {value.caption && (
-            <figcaption className="mt-3 text-center text-sm text-body-color">
+            <figcaption className="mt-3 text-center text-sm text-body-color dark:text-body-color-dark">
               {value.caption}
             </figcaption>
           )}

@@ -56,10 +56,10 @@ const Blog = async () => {
                 <h3 className="mb-2 text-lg font-bold text-lumi-navy group-hover:text-primary dark:text-lumi-offwhite">
                   {post.title}
                 </h3>
-                <p className="mb-4 flex-1 text-sm leading-relaxed text-body-color line-clamp-2">
+                <p className="mb-4 flex-1 text-sm leading-relaxed text-body-color dark:text-body-color-dark line-clamp-2">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center justify-between border-t border-stroke-stroke pt-4 text-xs text-body-color dark:border-lumi-mutednav">
+                <div className="flex items-center justify-between border-t border-stroke-stroke pt-4 text-xs text-body-color dark:text-body-color-dark dark:border-lumi-mutednav">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>

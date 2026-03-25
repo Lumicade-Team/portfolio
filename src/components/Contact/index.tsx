@@ -13,7 +13,7 @@ const Contact = () => {
               <h2 className="mb-3 text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite sm:text-3xl lg:text-2xl xl:text-3xl">
                 Have a project in mind? Let&apos;s build it together.
               </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
+              <p className="mb-12 text-base font-medium text-body-color dark:text-body-color-dark">
                 Whether it&apos;s a custom system, mobile app, or AI workflow — we&apos;re ready to help.
               </p>
               <form>

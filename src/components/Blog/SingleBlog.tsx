@@ -25,7 +25,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
               {title}
             </Link>
           </h3>
-          <p className="border-body-color/10 text-body-color mb-6 border-b pb-6 text-base font-medium dark:border-white/10">
+          <p className="border-body-color/10 text-body-color dark:text-body-color-dark mb-6 border-b pb-6 text-base font-medium dark:border-white/10">
             {paragraph}
           </p>
           <div className="flex items-center">
@@ -39,14 +39,14 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
                 <h4 className="text-lumi-navy mb-1 text-sm font-medium dark:text-lumi-offwhite">
                   By {author.name}
                 </h4>
-                <p className="text-body-color text-xs">{author.designation}</p>
+                <p className="text-body-color dark:text-body-color-dark text-xs">{author.designation}</p>
               </div>
             </div>
             <div className="inline-block">
               <h4 className="text-lumi-navy mb-1 text-sm font-medium dark:text-lumi-offwhite">
                 Date
               </h4>
-              <p className="text-body-color text-xs">{publishDate}</p>
+              <p className="text-body-color dark:text-body-color-dark text-xs">{publishDate}</p>
             </div>
           </div>
         </div>
