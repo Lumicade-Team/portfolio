@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function AdminLayout({
   children,
@@ -10,6 +10,18 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Don't show admin nav on login page
+  if (pathname === "/admin/login") {
+    return <>{children}</>;
+  }
+
+  const handleLogout = async () => {
+    await fetch("/api/auth", { method: "DELETE" });
+    router.push("/admin/login");
+    router.refresh();
+  };
 
   return (
     <div className="min-h-screen bg-lumi-offwhite dark:bg-lumi-navy">
@@ -51,12 +63,20 @@ export default function AdminLayout({
               </Link>
             </div>
           </div>
-          <Link
-            href="/"
-            className="text-sm font-medium text-body-color hover:text-primary"
-          >
-            View Site
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="text-sm font-medium text-body-color hover:text-primary"
+            >
+              View Site
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="rounded-lg border border-stroke-stroke px-4 py-1.5 text-sm font-medium text-body-color transition hover:border-red-500 hover:text-red-500 dark:border-lumi-mutednav"
+            >
+              Logout
+            </button>
+          </div>
         </div>
       </nav>
       <main className="mx-auto max-w-6xl px-6 py-8">{children}</main>

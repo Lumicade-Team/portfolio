@@ -198,7 +198,7 @@ export default function TipTapEditor({
       StarterKit.configure({
         heading: { levels: [2, 3, 4] },
       }),
-      Image.configure({ inline: false, allowBase64: true }),
+      Image.configure({ inline: false, allowBase64: false }),
       Youtube.configure({ controls: true, nocookie: true }),
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: "Start writing your blog post..." }),

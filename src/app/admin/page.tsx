@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { supabase, BlogPost } from "@/lib/supabase";
+import { supabase, supabaseAdmin, BlogPost } from "@/lib/supabase";
 
 export default function AdminDashboard() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
   const handleDelete = async (id: string, title: string) => {
     if (!confirm(`Delete "${title}"? This cannot be undone.`)) return;
 
-    const { error } = await supabase.from("posts").delete().eq("id", id);
+    const { error } = await supabaseAdmin.from("posts").delete().eq("id", id);
     if (error) {
       alert("Failed to delete: " + error.message);
       return;
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
   };
 
   const togglePublished = async (id: string, published: boolean) => {
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
       .from("posts")
       .update({ published: !published })
       .eq("id", id);

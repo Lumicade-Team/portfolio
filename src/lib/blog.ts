@@ -1,4 +1,5 @@
-import { supabase, BlogPost as SupabaseBlogPost } from "./supabase";
+import { client, urlFor } from "@/sanity/client";
+import { postsQuery, postBySlugQuery, postSlugsQuery } from "@/sanity/queries";
 
 export type BlogPost = {
   slug: string;
@@ -7,48 +8,59 @@ export type BlogPost = {
   excerpt: string;
   tags: string[];
   readTime: string;
-  content: string;
   coverImage: string | null;
+  body: any[];
 };
 
-function estimateReadTime(text: string): string {
-  const words = text.replace(/<[^>]*>/g, "").split(/\s+/).length;
+function estimateReadTime(body: any[]): string {
+  if (!body) return "1 min read";
+  const text = body
+    .filter((b: any) => b._type === "block")
+    .map((b: any) => b.children?.map((c: any) => c.text).join("") || "")
+    .join(" ");
+  const words = text.split(/\s+/).length;
   const minutes = Math.max(1, Math.ceil(words / 200));
   return `${minutes} min read`;
 }
 
-function mapSupabasePost(post: SupabaseBlogPost): BlogPost {
+function mapPost(post: any): BlogPost {
   return {
     slug: post.slug,
     title: post.title,
-    date: new Date(post.created_at).toISOString().split("T")[0],
-    excerpt: post.excerpt,
+    date: post.publishedAt
+      ? new Date(post.publishedAt).toISOString().split("T")[0]
+      : "",
+    excerpt: post.excerpt || "",
     tags: post.tags || [],
-    readTime: estimateReadTime(post.content),
-    content: post.content,
-    coverImage: post.cover_image,
+    readTime: estimateReadTime(post.body),
+    coverImage: post.coverImage ? urlFor(post.coverImage).width(1200).url() : null,
+    body: post.body || [],
   };
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const { data, error } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("published", true)
-    .order("created_at", { ascending: false });
-
-  if (error || !data) return [];
-  return data.map(mapSupabasePost);
+  try {
+    const posts = await client.fetch(postsQuery);
+    return (posts || []).map(mapPost);
+  } catch {
+    return [];
+  }
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const { data, error } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("slug", slug)
-    .eq("published", true)
-    .single();
+  try {
+    const post = await client.fetch(postBySlugQuery, { slug });
+    if (!post) return null;
+    return mapPost(post);
+  } catch {
+    return null;
+  }
+}
 
-  if (error || !data) return null;
-  return mapSupabasePost(data);
+export async function getAllSlugs(): Promise<string[]> {
+  try {
+    return (await client.fetch(postSlugsQuery)) || [];
+  } catch {
+    return [];
+  }
 }

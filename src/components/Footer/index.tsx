@@ -16,7 +16,7 @@ const Footer = () => {
                     alt="Lumicade Solutions"
                     width={140}
                     height={140}
-                    className="h-16 w-16"
+                    className="h-[140px] w-[140px]"
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color-dark">

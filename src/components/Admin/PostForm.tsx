@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase, BlogPost } from "@/lib/supabase";
+import { supabase, supabaseAdmin, BlogPost } from "@/lib/supabase";
 import TipTapEditor from "./Editor";
 
 function slugify(text: string) {
@@ -35,7 +35,7 @@ export default function PostForm({ post }: { post?: BlogPost }) {
   const handleCoverUpload = async (file: File) => {
     const fileExt = file.name.split(".").pop();
     const fileName = `covers/${Date.now()}.${fileExt}`;
-    const { data, error } = await supabase.storage
+    const { data, error } = await supabaseAdmin.storage
       .from("blog-images")
       .upload(fileName, file);
 
@@ -44,50 +44,82 @@ export default function PostForm({ post }: { post?: BlogPost }) {
       return;
     }
 
-    const { data: urlData } = supabase.storage
+    const { data: urlData } = supabaseAdmin.storage
       .from("blog-images")
       .getPublicUrl(data.path);
 
     setCoverImage(urlData.publicUrl);
   };
 
+  const [saveError, setSaveError] = useState("");
+
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
+    setSaveError("");
 
     const tags = tagsInput
       .split(",")
       .map((t) => t.trim())
       .filter(Boolean);
 
+    // Strip base64 images from content to prevent oversized payloads
+    const cleanContent = content.replace(
+      /src="data:image\/[^"]+"/g,
+      'src=""',
+    );
+
     const payload = {
       title,
       slug,
       excerpt,
-      content,
+      content: cleanContent,
       cover_image: coverImage || null,
       tags,
       published,
     };
 
-    let error;
+    try {
+      if (post) {
+        // Delete then re-insert to avoid update issues
+        const { error: delError } = await supabaseAdmin
+          .from("posts")
+          .delete()
+          .eq("id", post.id);
 
-    if (post) {
-      ({ error } = await supabase
-        .from("posts")
-        .update(payload)
-        .eq("id", post.id));
-    } else {
-      ({ error } = await supabase.from("posts").insert(payload));
-    }
+        if (delError) {
+          setSaving(false);
+          setSaveError("Delete failed: " + delError.message);
+          return;
+        }
 
-    setSaving(false);
+        const { error: insError } = await supabaseAdmin
+          .from("posts")
+          .insert({ ...payload, id: post.id, created_at: post.created_at });
 
-    if (error) {
-      alert("Failed to save: " + error.message);
+        if (insError) {
+          setSaving(false);
+          setSaveError("Re-insert failed: " + insError.message);
+          return;
+        }
+      } else {
+        const { error } = await supabaseAdmin
+          .from("posts")
+          .insert(payload);
+
+        if (error) {
+          setSaving(false);
+          setSaveError(error.message);
+          return;
+        }
+      }
+    } catch (err: unknown) {
+      setSaving(false);
+      setSaveError(err instanceof Error ? err.message : String(err));
       return;
     }
 
+    setSaving(false);
     router.push("/admin");
     router.refresh();
   };
@@ -100,6 +132,13 @@ export default function PostForm({ post }: { post?: BlogPost }) {
 
   return (
     <form onSubmit={handleSave} className="space-y-6">
+      {saveError && (
+        <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-5 py-4">
+          <p className="text-sm font-medium text-red-500">
+            Failed to save: {saveError}
+          </p>
+        </div>
+      )}
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label className={labelClass}>Title</label>

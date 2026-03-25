@@ -31,7 +31,9 @@ create trigger posts_updated_at
 --   Name: blog-images
 --   Public: true
 
--- RLS policies (adjust as needed)
+-- RLS policies
+-- NOTE: Currently open access for admin portal without auth.
+-- Add authentication and tighten these policies before going to production.
 alter table posts enable row level security;
 
 -- Allow public read of published posts
@@ -39,7 +41,9 @@ create policy "Public can read published posts"
   on posts for select
   using (published = true);
 
--- Allow authenticated users full access (for admin)
-create policy "Authenticated users full access"
+-- Allow all operations via anon key (for admin portal)
+-- TODO: Replace with auth-based policy before production
+create policy "Allow all operations"
   on posts for all
-  using (auth.role() = 'authenticated');
+  using (true)
+  with check (true);
