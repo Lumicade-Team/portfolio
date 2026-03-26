@@ -12,6 +12,15 @@ export const supabaseAdmin = createClient(supabaseUrl, supabaseAnonKey, {
   },
 });
 
+// Service-role client for privileged server-side operations (never expose to the browser)
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!supabaseServiceRoleKey) {
+  throw new Error("Missing environment variable: SUPABASE_SERVICE_ROLE_KEY");
+}
+export const supabaseServiceRole = createClient(supabaseUrl, supabaseServiceRoleKey, {
+  auth: { persistSession: false },
+});
+
 export type BlogPost = {
   id: string;
   title: string;
