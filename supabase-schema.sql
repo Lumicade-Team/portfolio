@@ -100,7 +100,3 @@ create policy "Service role can read newsletter subscribers"
   on newsletter_subscribers for select
   using (auth.role() = 'service_role');
 
--- Allow reads for current admin portal setup using anon key
-create policy "Public can read newsletter subscribers"
-  on newsletter_subscribers for select
-  using (true);
