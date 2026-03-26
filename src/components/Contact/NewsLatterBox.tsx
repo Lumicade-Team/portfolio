@@ -6,10 +6,47 @@ import { useTheme } from "next-themes";
 const NewsLatterBox = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   useEffect(() => setMounted(true), []);
 
   const accent = mounted && theme === "light" ? "#3352DA" : "#fff";
   const accentAlt = mounted && theme === "light" ? "#229D94" : "#fff";
+
+  const handleSubscribe = async () => {
+    if (!name.trim() || !email.trim()) {
+      alert("Please enter your name and email.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.error || "Failed to subscribe.");
+        return;
+      }
+
+      alert(data.message || "Subscribed successfully.");
+      setName("");
+      setEmail("");
+    } catch {
+      alert("Something went wrong while subscribing.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="shadow-card dark:bg-dark relative z-10 rounded-xl bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
@@ -23,20 +60,27 @@ const NewsLatterBox = () => {
         <input
           type="text"
           name="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
           placeholder="Enter your name"
-          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
+          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
         <input
           type="email"
           name="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           placeholder="Enter your email"
-          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:text-body-color-dark dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
+          className="border-stroke text-body-color dark:text-body-color-dark focus:border-primary dark:focus:border-primary mb-4 w-full rounded-md border bg-lumi-offwhite px-6 py-3 text-base outline-hidden dark:border-lumi-mutednav dark:bg-lumi-navy dark:focus:shadow-none"
         />
-        <input
-          type="submit"
-          value="Subscribe"
-          className="bg-primary hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-lg px-9 py-4 text-base font-medium text-lumi-offwhite duration-300"
-        />
+        <button
+          type="button"
+          onClick={handleSubscribe}
+          disabled={isSubmitting}
+          className="bg-primary hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-lg px-9 py-4 text-base font-medium text-lumi-offwhite duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {isSubmitting ? "Subscribing..." : "Subscribe"}
+        </button>
         <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
           No spam. Unsubscribe anytime.
         </p>

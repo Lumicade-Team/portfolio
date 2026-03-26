@@ -61,6 +61,16 @@ export default function AdminLayout({
               >
                 New Post
               </Link>
+              <Link
+                href="/admin/newsletter"
+                className={`text-sm font-medium transition ${
+                  pathname === "/admin/newsletter"
+                    ? "text-primary"
+                    : "text-body-color dark:text-body-color-dark hover:text-primary"
+                }`}
+              >
+                Subscribers
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-4">
