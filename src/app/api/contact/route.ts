@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabaseServer";
 import nodemailer from "nodemailer";
 
 type ContactPayload = {
@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
 
-    const { error } = await supabase.from("contact_messages").insert({
+    const { error } = await supabaseServer.from("contact_messages").insert({
       name: payload.name,
       email: payload.email,
       message: payload.message,
