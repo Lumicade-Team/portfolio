@@ -1,4 +1,4 @@
-import { PortableText as PT, PortableTextComponents } from "@portabletext/react";
+import { PortableText as PT, PortableTextComponents, PortableTextBlock } from "@portabletext/react";
 import { urlFor } from "@/sanity/client";
 
 const components: PortableTextComponents = {
@@ -84,6 +84,6 @@ const components: PortableTextComponents = {
   },
 };
 
-export default function PortableTextBody({ body }: { body: any[] }) {
+export default function PortableTextBody({ body }: { body: PortableTextBlock[] }) {
   return <PT value={body} components={components} />;
 }

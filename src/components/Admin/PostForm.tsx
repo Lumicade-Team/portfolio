@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase, supabaseAdmin, BlogPost } from "@/lib/supabase";
+import { supabaseAdmin, BlogPost } from "@/lib/supabase";
 import TipTapEditor from "./Editor";
 
 function slugify(text: string) {
