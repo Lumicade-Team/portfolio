@@ -47,3 +47,60 @@ create policy "Allow all operations"
   on posts for all
   using (true)
   with check (true);
+
+-- Contact messages table
+create table if not exists contact_messages (
+  id uuid default gen_random_uuid() primary key,
+  name text not null,
+  email text not null,
+  message text not null,
+  created_at timestamptz default now()
+);
+
+alter table contact_messages enable row level security;
+
+-- Allow public inserts from the website contact form
+create policy "Public can insert contact messages"
+  on contact_messages for insert
+  with check (true);
+
+-- Allow reads/management via service role on backend only
+create policy "Service role can read contact messages"
+  on contact_messages for select
+  using (auth.role() = 'service_role');
+
+-- Newsletter subscribers table
+create table if not exists newsletter_subscribers (
+  id uuid default gen_random_uuid() primary key,
+  name text not null,
+  email text not null unique,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+create trigger newsletter_subscribers_updated_at
+  before update on newsletter_subscribers
+  for each row
+  execute function update_updated_at();
+
+alter table newsletter_subscribers enable row level security;
+
+-- Allow website newsletter form to subscribe/update by email
+create policy "Public can upsert newsletter subscribers"
+  on newsletter_subscribers for insert
+  with check (true);
+
+create policy "Public can update newsletter subscribers"
+  on newsletter_subscribers for update
+  using (true)
+  with check (true);
+
+-- Allow backend service role to read subscribers
+create policy "Service role can read newsletter subscribers"
+  on newsletter_subscribers for select
+  using (auth.role() = 'service_role');
+
+-- Allow reads for current admin portal setup using anon key
+create policy "Public can read newsletter subscribers"
+  on newsletter_subscribers for select
+  using (true);

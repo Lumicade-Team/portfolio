@@ -58,12 +58,20 @@ export default function AdminDashboard() {
             Manage your blog content
           </p>
         </div>
-        <Link
-          href="/admin/posts/new"
-          className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-lumi-offwhite transition hover:bg-primary/90"
-        >
-          New Post
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/admin/newsletter"
+            className="rounded-lg border border-stroke-stroke px-5 py-2.5 text-sm font-medium text-body-color transition hover:border-primary hover:text-primary dark:border-lumi-mutednav dark:text-body-color-dark"
+          >
+            Subscribers
+          </Link>
+          <Link
+            href="/admin/posts/new"
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-lumi-offwhite transition hover:bg-primary/90"
+          >
+            New Post
+          </Link>
+        </div>
       </div>
 
       {loading ? (
