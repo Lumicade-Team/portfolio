@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 
 type NewsletterSubscriber = {
   id: string;
@@ -18,17 +17,18 @@ export default function AdminNewsletterPage() {
   const fetchSubscribers = async () => {
     setLoading(true);
 
-    const { data, error } = await supabase
-      .from("newsletter_subscribers")
-      .select("id, name, email, created_at")
-      .order("created_at", { ascending: false });
+    const res = await fetch("/api/admin/newsletter");
 
-    if (error) {
-      alert("Failed to load subscribers: " + error.message);
+    if (!res.ok) {
+      const msg = res.status === 401
+        ? "Unauthorized — please log in again."
+        : "Unable to load subscribers. Please try again later.";
+      alert(msg);
       setLoading(false);
       return;
     }
 
+    const data = await res.json();
     setSubscribers(data || []);
     setLoading(false);
   };

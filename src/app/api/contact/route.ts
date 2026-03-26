@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabaseServer";
 import nodemailer from "nodemailer";
 
 type ContactPayload = {
@@ -15,6 +15,15 @@ type EmailAlertResult = {
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 async function sendEmailAlert(payload: ContactPayload): Promise<EmailAlertResult> {
@@ -46,15 +55,16 @@ async function sendEmailAlert(payload: ContactPayload): Promise<EmailAlertResult
       subject: `New contact form message from ${payload.name}`,
       html: `
         <h2>New Contact Form Message</h2>
-        <p><strong>Name:</strong> ${payload.name}</p>
-        <p><strong>Email:</strong> ${payload.email}</p>
+        <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
         <p><strong>Message:</strong></p>
-        <p>${payload.message.replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(payload.message).replace(/\n/g, "<br />")}</p>
       `,
     });
 
     return { sent: true };
-  } catch {
+  } catch (err) {
+    console.error("Email sending failed:", err);
     return { sent: false, reason: "Google SMTP rejected the request. Check Gmail app password and sender settings." };
   }
 }
@@ -77,7 +87,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
 
-    const { error } = await supabase.from("contact_messages").insert({
+    const { error } = await supabaseServer.from("contact_messages").insert({
       name: payload.name,
       email: payload.email,
       message: payload.message,
