@@ -90,10 +90,10 @@ create policy "Public can upsert newsletter subscribers"
   on newsletter_subscribers for insert
   with check (true);
 
-create policy "Public can update newsletter subscribers"
+create policy "Service role can update newsletter subscribers"
   on newsletter_subscribers for update
-  using (true)
-  with check (true);
+  using (auth.role() = 'service_role')
+  with check (auth.role() = 'service_role');
 
 -- Allow backend service role to read subscribers
 create policy "Service role can read newsletter subscribers"
