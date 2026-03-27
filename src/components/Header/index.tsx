@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
@@ -38,7 +38,6 @@ const Header = () => {
   };
 
   const pathname = usePathname();
-  const router = useRouter();
 
   // Track active section based on scroll position
   const [activeSection, setActiveSection] = useState("");

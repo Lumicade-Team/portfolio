@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { techStack } from "./aboutData";
 
 const TechStackCTA = () => (
@@ -61,12 +62,12 @@ const TechStackCTA = () => (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </a>
-              <a
+              <Link
                 href="/#services"
                 className="inline-flex items-center gap-2 rounded-xl border border-lumi-mutednav/50 px-7 py-3.5 text-sm font-semibold text-body-color-dark/80 transition-all hover:border-teal hover:text-teal"
               >
                 View Services
-              </a>
+              </Link>
             </div>
 
             <div className="pointer-events-none absolute -bottom-2 -right-2 h-24 w-24 rounded-2xl border border-primary/10 opacity-0 transition-opacity group-hover:opacity-100" />

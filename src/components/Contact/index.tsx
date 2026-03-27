@@ -39,8 +39,15 @@ const Contact = () => {
         return;
       }
 
-      if (!data.emailSent && data.emailError) {
-        alert(`${data.message}\n\nEmail error: ${data.emailError}`);
+      if (!data.emailSent) {
+        // Log detailed email error information for debugging without exposing it to end users
+        if (data.emailError) {
+          console.error("Email sending error:", data.emailError);
+        }
+        alert(
+          data.message ||
+            "Your message was received, but we couldn't send a confirmation email. Please contact support if the issue persists."
+        );
       } else {
         alert(data.message || "Your message has been sent.");
       }
