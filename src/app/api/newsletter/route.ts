@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { getSupabaseServer } from "@/lib/supabaseServer";
 
 type NewsletterPayload = {
   name: string;
@@ -26,6 +26,8 @@ export async function POST(request: NextRequest) {
     if (!isValidEmail(payload.email)) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
+
+    const supabaseServer = getSupabaseServer();
 
     const { error } = await supabaseServer
       .from("newsletter_subscribers")

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { getSupabaseServer } from "@/lib/supabaseServer";
 
 async function hmacSign(message: string, secret: string): Promise<string> {
   const encoder = new TextEncoder();
@@ -27,24 +27,30 @@ async function verifyToken(token: string, secret: string): Promise<boolean> {
 }
 
 export async function GET(request: NextRequest) {
-  const secret = process.env.ADMIN_SESSION_SECRET;
-  if (!secret) {
+  try {
+    const secret = process.env.ADMIN_SESSION_SECRET;
+    if (!secret) {
+      return NextResponse.json({ error: "Server misconfiguration." }, { status: 500 });
+    }
+
+    const token = request.cookies.get("admin_session")?.value;
+    if (!token || !(await verifyToken(token, secret))) {
+      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    }
+
+    const supabaseServer = getSupabaseServer();
+
+    const { data, error } = await supabaseServer
+      .from("newsletter_subscribers")
+      .select("id, name, email, created_at")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      return NextResponse.json({ error: "Failed to fetch subscribers." }, { status: 500 });
+    }
+
+    return NextResponse.json(data);
+  } catch {
     return NextResponse.json({ error: "Server misconfiguration." }, { status: 500 });
   }
-
-  const token = request.cookies.get("admin_session")?.value;
-  if (!token || !(await verifyToken(token, secret))) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
-  }
-
-  const { data, error } = await supabaseServer
-    .from("newsletter_subscribers")
-    .select("id, name, email, created_at")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    return NextResponse.json({ error: "Failed to fetch subscribers." }, { status: 500 });
-  }
-
-  return NextResponse.json(data);
 }

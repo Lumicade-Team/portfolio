@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { getSupabaseServer } from "@/lib/supabaseServer";
 import nodemailer from "nodemailer";
 
 type ContactPayload = {
@@ -87,25 +87,32 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
 
+    const supabaseServer = getSupabaseServer();
+
     const { error } = await supabaseServer.from("contact_messages").insert({
       name: payload.name,
       email: payload.email,
       message: payload.message,
     });
 
-    if (error) {
-      return NextResponse.json({ error: "Failed to save your message." }, { status: 500 });
-    }
-
     const emailResult = await sendEmailAlert(payload);
 
+    // Without a privileged key, DB writes can fail under RLS. Treat email as a valid fallback path.
+    if (error && !emailResult.sent) {
+      return NextResponse.json({ error: "Failed to process your message." }, { status: 500 });
+    }
+
     return NextResponse.json({
-      success: true,
+      success: !error || emailResult.sent,
+      savedToDb: !error,
       emailSent: emailResult.sent,
-      message: emailResult.sent
+      message: !error && emailResult.sent
         ? "Your message was submitted successfully."
-        : "Your message was saved, but email notification failed.",
+        : !error && !emailResult.sent
+          ? "Your message was saved, but email notification failed."
+          : "Your message was sent by email, but could not be stored in the database.",
       emailError: emailResult.sent ? undefined : emailResult.reason,
+      dbError: error ? "Could not store message in Supabase." : undefined,
     });
   } catch {
     return NextResponse.json({ error: "Unexpected error while sending your message." }, { status: 500 });
