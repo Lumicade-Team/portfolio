@@ -14,17 +14,17 @@ const Hero = () => {
           <defs>
             <pattern
               id="binary-grid"
-              width="200"
-              height="120"
+              width="480"
+              height="280"
               patternUnits="userSpaceOnUse"
               patternTransform="rotate(-5)"
             >
-              <text x="0" y="16" fill="#97a9ff" fontFamily="monospace" fontSize="14" letterSpacing="4">10110010 01001101</text>
-              <text x="40" y="36" fill="#6dddff" fontFamily="monospace" fontSize="14" letterSpacing="4">01001011 10100110</text>
-              <text x="10" y="56" fill="#a68cff" fontFamily="monospace" fontSize="14" letterSpacing="4">11010010 01101001</text>
-              <text x="60" y="76" fill="#97a9ff" fontFamily="monospace" fontSize="14" letterSpacing="4">00101101 11010100</text>
-              <text x="20" y="96" fill="#6dddff" fontFamily="monospace" fontSize="14" letterSpacing="4">10010110 01011010</text>
-              <text x="50" y="116" fill="#a68cff" fontFamily="monospace" fontSize="14" letterSpacing="4">01100101 10110011</text>
+              <text x="0" y="36" fill="#97a9ff" fontFamily="monospace" fontSize="32" letterSpacing="8">10110010 01001101</text>
+              <text x="80" y="84" fill="#6dddff" fontFamily="monospace" fontSize="32" letterSpacing="8">01001011 10100110</text>
+              <text x="20" y="132" fill="#a68cff" fontFamily="monospace" fontSize="32" letterSpacing="8">11010010 01101001</text>
+              <text x="120" y="180" fill="#97a9ff" fontFamily="monospace" fontSize="32" letterSpacing="8">00101101 11010100</text>
+              <text x="40" y="228" fill="#6dddff" fontFamily="monospace" fontSize="32" letterSpacing="8">10010110 01011010</text>
+              <text x="100" y="272" fill="#a68cff" fontFamily="monospace" fontSize="32" letterSpacing="8">01100101 10110011</text>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#binary-grid)" />
