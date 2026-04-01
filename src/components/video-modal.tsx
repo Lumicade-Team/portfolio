@@ -1,4 +1,8 @@
-import { createPortal } from "react-dom";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type PropsType = {
   isOpen: boolean;
@@ -15,8 +19,6 @@ type PropsType = {
 );
 
 export default function VideoModal({ isOpen, onClose, ...props }: PropsType) {
-  if (!isOpen) return null;
-
   let src = "";
 
   if (props.channel === "youtube") {
@@ -25,19 +27,12 @@ export default function VideoModal({ isOpen, onClose, ...props }: PropsType) {
     src = props.src;
   }
 
-  return createPortal(
-    <div className="fixed inset-0 flex items-center justify-center bg-black/60">
-      <div className="relative w-full max-w-4xl bg-gray-900">
-        <button
-          onClick={onClose}
-          className="absolute -top-2 -right-4 translate-x-full text-7xl leading-none text-white"
-        >
-          <span className="sr-only">Close modal</span>
-          &times;
-        </button>
+  return (
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-w-4xl border-none bg-gray-900 p-0 [&>button]:text-white [&>button]:opacity-70 [&>button]:hover:opacity-100">
+        <DialogTitle className="sr-only">Video</DialogTitle>
         <iframe width="100%" height="500" src={src} allowFullScreen />
-      </div>
-    </div>,
-    document.body,
+      </DialogContent>
+    </Dialog>
   );
 }
