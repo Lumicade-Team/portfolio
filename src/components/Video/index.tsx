@@ -1,66 +1,76 @@
-import Link from "next/link";
-import SectionTitle from "../Common/SectionTitle";
-
-const products = [
-  {
-    id: 1,
-    title: "Lumicade OCR",
-    description: "Receipt and document data extraction API — fast, accurate, and developer-friendly.",
-    available: true,
-  },
-  {
-    id: 2,
-    title: "Coming Soon",
-    description: "A new productivity tool for teams is currently in development. Stay tuned for updates.",
-    available: false,
-  },
-  {
-    id: 3,
-    title: "Coming Soon",
-    description: "Another microservice is on the roadmap. Subscribe to our newsletter for early access.",
-    available: false,
-  },
-];
-
-export default function Products() {
+const Products = () => {
   return (
-    <section id="products" className="relative z-10 py-16 md:py-20 lg:py-28">
-      <div className="container">
-        <SectionTitle
-          title="Our Own Suite of Tools"
-          paragraph="Beyond client work, we build and maintain proprietary SaaS products available by subscription."
-          center
-          mb="80px"
-        />
+    <section id="products" className="py-32 bg-surface">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20">
+          <span className="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-4">
+            The Suite
+          </span>
+          <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight">
+            Proprietary Products
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="rounded-xl border border-lumi-mutednav bg-dark p-8 shadow-card transition-all duration-300 hover:border-teal"
-            >
-              <h3 className="mb-3 text-xl font-bold text-lumi-offwhite">
-                {product.title}
+        <div className="space-y-32">
+          {/* Product 1 */}
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1 order-2 md:order-1">
+              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+                Lumina Analytics
               </h3>
-              <p className="mb-6 text-base leading-relaxed text-body-color-dark">
-                {product.description}
+              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                Real-time predictive modeling for enterprise infrastructure.
+                Lumina provides deep insights into your cloud ecosystem with
+                unmatched precision.
               </p>
-              {product.available ? (
-                <Link
-                  href="/contact"
-                  className="inline-block text-base font-semibold text-teal transition hover:text-teal/80"
-                >
-                  Learn More &rarr;
-                </Link>
-              ) : (
-                <span className="inline-block text-base font-medium text-lumi-mutednav">
-                  In Development
-                </span>
-              )}
+              <a
+                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                href="#"
+              >
+                Learn More
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
-          ))}
+            <div className="flex-1 order-1 md:order-2 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+              <img
+                alt="Lumina Analytics Interface"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUhAVB4dxeUKnPan18sQb0GJ169j9WuzAU9rktcmz5eaXHQ5uXGaWtKvffkLBPtMGi_sDqPD-Hg4HMIk9Ve6_kuKqXXhe1c9Md1yy6FLYaoq_6pgjpPcBXr7z4WuOATljEyZUKafXCB0mrXrLsOYikNW1rngKDEZuemgsi-8O06K5nDCreWLTdlObPT4CpVwpRnMrgic0hJUgRUQq8pTWRIllGoZcq4ViSwCtBp97o4Q2SAdDEhitmGtRIRND9XSgnU1bmIW2RRq8"
+              />
+            </div>
+          </div>
+
+          {/* Product 2 */}
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+              <img
+                alt="Cadence Workflow"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuApOPWgoKZ9QnN42fmVyESQGAeZxlBYkoh1l-fqMdzaMzZzHpfeanKt73mfxoL3jJT1WHjYVCSM68kVgNPtko4ZLQzwhEAaiszGSSpiHIlL4SPLuewSP5oeqStyJwu2n2B_xY3EuzFT4WZkmo3uXc-Im4VUeCjdE0aFkkasfRSpm1I9FZu8ybYlCWmFstkxUT6O1ovOix860daMjSWQlm4--PVHIWVOdUdjt_DZnGy7887oOlfHYo5ZvW8jHTG_g_WCJmVtptXChpk"
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+                Cadence Flow
+              </h3>
+              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                The ultimate automation engine for creative workflows.
+                Synchronize cross-functional teams with deterministic logic and
+                intuitive design.
+              </p>
+              <a
+                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                href="#"
+              >
+                Learn More
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Products;
