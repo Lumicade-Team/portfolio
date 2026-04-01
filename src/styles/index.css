@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap')
 layer(base);
 
 @import 'tailwindcss';
@@ -18,60 +18,96 @@ html {
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
 
+  /* Surface hierarchy */
+  --color-surface: #0b0e14;
+  --color-surface-dim: #0b0e14;
+  --color-surface-bright: #282c36;
+  --color-surface-variant: #22262f;
+  --color-surface-tint: #97a9ff;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #10131a;
+  --color-surface-container: #161a21;
+  --color-surface-container-high: #1c2028;
+  --color-surface-container-highest: #22262f;
+  --color-background: #0b0e14;
+  --color-on-background: #ecedf6;
+  --color-on-surface: #ecedf6;
+  --color-on-surface-variant: #a9abb3;
+  --color-inverse-surface: #f9f9ff;
+  --color-inverse-on-surface: #52555c;
+
+  /* Primary */
+  --color-primary: #97a9ff;
+  --color-primary-dim: #3e65ff;
+  --color-primary-container: #859aff;
+  --color-primary-fixed: #859aff;
+  --color-primary-fixed-dim: #718bff;
+  --color-on-primary: #002283;
+  --color-on-primary-container: #001867;
+  --color-on-primary-fixed: #000000;
+  --color-on-primary-fixed-variant: #00207e;
+  --color-inverse-primary: #134af1;
+
+  /* Secondary */
+  --color-secondary: #a68cff;
+  --color-secondary-dim: #7e51ff;
+  --color-secondary-container: #591adc;
+  --color-secondary-fixed: #d8caff;
+  --color-secondary-fixed-dim: #cabaff;
+  --color-on-secondary: #25006b;
+  --color-on-secondary-container: #e4daff;
+  --color-on-secondary-fixed: #3b00a0;
+  --color-on-secondary-fixed-variant: #591bdc;
+
+  /* Tertiary */
+  --color-tertiary: #6dddff;
+  --color-tertiary-dim: #00c3eb;
+  --color-tertiary-container: #00d2fd;
+  --color-tertiary-fixed: #00d2fd;
+  --color-tertiary-fixed-dim: #00c3eb;
+  --color-on-tertiary: #004c5e;
+  --color-on-tertiary-container: #004352;
+  --color-on-tertiary-fixed: #002c37;
+  --color-on-tertiary-fixed-variant: #004c5d;
+
+  /* Error */
+  --color-error: #ff716c;
+  --color-error-dim: #d7383b;
+  --color-error-container: #9f0519;
+  --color-on-error: #490006;
+  --color-on-error-container: #ffa8a3;
+
+  /* Outline */
+  --color-outline: #73757d;
+  --color-outline-variant: #45484f;
+
+  /* Legacy tokens (kept for non-homepage pages) */
   --color-current: currentColor;
   --color-transparent: transparent;
   --color-white: #ffffff;
   --color-black: #121723;
   --color-dark: #1C2E44;
-  --color-primary: #3352DA;
-  --color-teal: #229D94;
-  --color-yellow: #fbb040;
-  --color-bg-color-dark: #142336;
-
-  --color-lumi-navy: #142336;
-  --color-lumi-blue: #3352DA;
-  --color-lumi-teal: #229D94;
-  --color-lumi-offwhite: #F4F7FF;
-  --color-lumi-lightblue: #E8EEFF;
-  --color-lumi-mutednav: #2C4166;
-
   --color-body-color: #788293;
   --color-body-color-dark: #959cb1;
-
   --color-stroke-stroke: #e3e8ef;
   --color-stroke-dark: #353943;
 
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  --color-gray-950: #030712;
-  --color-gray-dark: #1C2E44;
-  --color-gray-light: #F4F7FF;
-
+  /* Shadows */
   --shadow-sign-up: 0px 5px 10px rgba(4, 10, 34, 0.2);
   --shadow-one: 0px 2px 3px rgba(7, 7, 77, 0.05);
   --shadow-two: 0px 5px 10px rgba(6, 8, 15, 0.1);
   --shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
   --shadow-sticky: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   --shadow-sticky-dark: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
-  --shadow-feature-2: 0px 10px 40px rgba(51, 82, 218, 0.12);
-  --shadow-card: 0 4px 24px rgba(51, 82, 218, 0.08);
+  --shadow-card: 0 4px 24px rgba(151, 169, 255, 0.08);
   --shadow-submit: 0px 5px 20px rgba(4, 10, 34, 0.1);
   --shadow-submit-dark: 0px 5px 20px rgba(4, 10, 34, 0.1);
-  --shadow-btn: 0px 1px 2px rgba(4, 10, 34, 0.15);
-  --shadow-btn-hover: 0px 1px 2px rgba(0, 0, 0, 0.15);
-  --shadow-btn-light: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 
   --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
 
-  --font-heading: 'Plus Jakarta Sans', 'Inter', 'Arial', sans-serif;
+  /* Fonts */
+  --font-headline: 'Manrope', 'Inter', 'Arial', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
@@ -81,21 +117,13 @@ html {
   padding-inline: 1rem;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-outline-variant, currentcolor);
   }
 }
 
@@ -145,12 +173,20 @@ html {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', 'Inter', 'Arial', sans-serif;
+    font-family: 'Manrope', 'Inter', 'Arial', sans-serif;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
 }
 
 @layer components {
   input[type="checkbox"]:checked ~ label span svg {
     @apply inline-flex;
+  }
+
+  .glass-glow {
+    box-shadow: inset 0 1px 0 0 rgba(69, 72, 79, 0.2);
   }
 }
