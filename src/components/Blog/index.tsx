@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FileText, ArrowRight } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { getAllPosts } from "@/lib/blog";
 import SectionTitle from "../Common/SectionTitle";
 
@@ -45,12 +46,13 @@ const Blog = async () => {
               <div className="flex flex-1 flex-col p-6">
                 <div className="mb-3 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                    <span
+                    <Badge
                       key={tag}
-                      className="rounded-full bg-teal/10 px-2.5 py-0.5 text-xs font-semibold text-teal"
+                      variant="secondary"
+                      className="rounded-full bg-teal/10 text-xs font-semibold text-teal hover:bg-teal/20"
                     >
                       {tag}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
                 <h3 className="mb-2 text-lg font-bold text-lumi-navy group-hover:text-primary dark:text-lumi-offwhite">
