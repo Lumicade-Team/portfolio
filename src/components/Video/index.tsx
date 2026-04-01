@@ -1,3 +1,5 @@
+import { ArrowRight } from "@phosphor-icons/react";
+
 const Products = () => {
   return (
     <section id="products" className="py-32 bg-surface">
@@ -28,7 +30,7 @@ const Products = () => {
                 href="#"
               >
                 Learn More
-                <span className="material-symbols-outlined">arrow_forward</span>
+                <ArrowRight size={20} />
               </a>
             </div>
             <div className="flex-1 order-1 md:order-2 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
@@ -63,7 +65,7 @@ const Products = () => {
                 href="#"
               >
                 Learn More
-                <span className="material-symbols-outlined">arrow_forward</span>
+                <ArrowRight size={20} />
               </a>
             </div>
           </div>
