@@ -4,14 +4,34 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
-      {/* Background image with overlay */}
+      {/* Binary pattern background */}
       <div className="absolute inset-0 z-0">
-        <img
-          alt="Digital Architecture"
-          className="w-full h-full object-cover opacity-20 scale-110"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0q0T3bIvfhzrSJVkr83rmc5u1YeNbPKMLccazi9UZ1eAxAhRIIXnUqBeNRWqyI0ThMWnUKz9xU8TJDIteNsg8GBhUkgOBlH2w_whXx2BxZPmoo-CsGLYVrbrebRvbNhZDLcK0qB0IkMY7kHS9QpXGDoEDxO-2CkFrf6k0KtiUNIDINagjywY_HQxFIYu2dKPgytEgjJ9a3wkd82XXBVaFk0MYoJowkiJtnwHlo4vJrwogxSxo2BD7DfTAicEQTF7MwhcgBvuYeh4"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <svg
+          className="w-full h-full opacity-[0.07]"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="binary-grid"
+              width="200"
+              height="120"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(-5)"
+            >
+              <text x="0" y="16" fill="#97a9ff" fontFamily="monospace" fontSize="14" letterSpacing="4">10110010 01001101</text>
+              <text x="40" y="36" fill="#6dddff" fontFamily="monospace" fontSize="14" letterSpacing="4">01001011 10100110</text>
+              <text x="10" y="56" fill="#a68cff" fontFamily="monospace" fontSize="14" letterSpacing="4">11010010 01101001</text>
+              <text x="60" y="76" fill="#97a9ff" fontFamily="monospace" fontSize="14" letterSpacing="4">00101101 11010100</text>
+              <text x="20" y="96" fill="#6dddff" fontFamily="monospace" fontSize="14" letterSpacing="4">10010110 01011010</text>
+              <text x="50" y="116" fill="#a68cff" fontFamily="monospace" fontSize="14" letterSpacing="4">01100101 10110011</text>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#binary-grid)" />
+        </svg>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
+        {/* Ambient glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/8 blur-[150px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
