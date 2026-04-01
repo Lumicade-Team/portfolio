@@ -4,34 +4,54 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
-      {/* Binary pattern background */}
-      <div className="absolute inset-0 z-0">
+      {/* Binary globe background */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <svg
-          className="w-full h-full opacity-[0.07]"
+          className="absolute w-[800px] h-[800px] md:w-[1000px] md:h-[1000px] opacity-[0.12]"
+          viewBox="0 0 1000 1000"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
           <defs>
             <pattern
               id="binary-grid"
-              width="480"
-              height="280"
+              width="420"
+              height="260"
               patternUnits="userSpaceOnUse"
-              patternTransform="rotate(-5)"
+              patternTransform="rotate(-8)"
             >
-              <text x="0" y="36" fill="#97a9ff" fontFamily="monospace" fontSize="32" letterSpacing="8">10110010 01001101</text>
-              <text x="80" y="84" fill="#6dddff" fontFamily="monospace" fontSize="32" letterSpacing="8">01001011 10100110</text>
-              <text x="20" y="132" fill="#a68cff" fontFamily="monospace" fontSize="32" letterSpacing="8">11010010 01101001</text>
-              <text x="120" y="180" fill="#97a9ff" fontFamily="monospace" fontSize="32" letterSpacing="8">00101101 11010100</text>
-              <text x="40" y="228" fill="#6dddff" fontFamily="monospace" fontSize="32" letterSpacing="8">10010110 01011010</text>
-              <text x="100" y="272" fill="#a68cff" fontFamily="monospace" fontSize="32" letterSpacing="8">01100101 10110011</text>
+              <text x="0" y="32" fill="#97a9ff" fontFamily="monospace" fontSize="28" letterSpacing="6">10110010 01001101</text>
+              <text x="70" y="74" fill="#6dddff" fontFamily="monospace" fontSize="28" letterSpacing="6">01001011 10100110</text>
+              <text x="15" y="116" fill="#a68cff" fontFamily="monospace" fontSize="28" letterSpacing="6">11010010 01101001</text>
+              <text x="100" y="158" fill="#97a9ff" fontFamily="monospace" fontSize="28" letterSpacing="6">00101101 11010100</text>
+              <text x="35" y="200" fill="#6dddff" fontFamily="monospace" fontSize="28" letterSpacing="6">10010110 01011010</text>
+              <text x="85" y="242" fill="#a68cff" fontFamily="monospace" fontSize="28" letterSpacing="6">01100101 10110011</text>
             </pattern>
+            {/* Radial fade to create globe illusion */}
+            <radialGradient id="globe-fade" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="white" stopOpacity="1" />
+              <stop offset="60%" stopColor="white" stopOpacity="0.8" />
+              <stop offset="85%" stopColor="white" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </radialGradient>
+            <mask id="globe-mask">
+              <rect width="1000" height="1000" fill="url(#globe-fade)" />
+            </mask>
           </defs>
-          <rect width="100%" height="100%" fill="url(#binary-grid)" />
+          {/* Globe body — binary text masked into a sphere */}
+          <g mask="url(#globe-mask)">
+            <rect width="1000" height="1000" fill="url(#binary-grid)" />
+          </g>
+          {/* Equator and meridian arcs for 3D depth */}
+          <ellipse cx="500" cy="500" rx="420" ry="420" fill="none" stroke="#97a9ff" strokeWidth="0.5" opacity="0.3" />
+          <ellipse cx="500" cy="500" rx="420" ry="180" fill="none" stroke="#6dddff" strokeWidth="0.5" opacity="0.2" />
+          <ellipse cx="500" cy="500" rx="180" ry="420" fill="none" stroke="#a68cff" strokeWidth="0.5" opacity="0.2" />
+          <ellipse cx="500" cy="500" rx="300" ry="420" fill="none" stroke="#97a9ff" strokeWidth="0.3" opacity="0.15" />
+          <ellipse cx="500" cy="500" rx="420" ry="300" fill="none" stroke="#6dddff" strokeWidth="0.3" opacity="0.15" />
         </svg>
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
-        {/* Ambient glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/8 blur-[150px] rounded-full" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
+        {/* Ambient glow behind globe */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
