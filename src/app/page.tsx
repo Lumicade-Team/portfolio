@@ -1,17 +1,16 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
 import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
-import Features from "@/components/Features";
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
+import Features from "@/components/Features";
 import Video from "@/components/Video";
+import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lumicade Solutions | Software House & SaaS Provider",
-  description: "We research, design, and develop IT solutions — from custom web systems and mobile apps to AI automation and our own subscription-based SaaS products. Based in Malaysia.",
+  title: "Lumicade Solutions | We Architect Digital Excellence",
+  description:
+    "Crafting bespoke software solutions and high-performance SaaS for visionary brands who demand precision engineering.",
 };
 
 export default function Home() {
@@ -21,10 +20,8 @@ export default function Home() {
       <Hero />
       <Features />
       <Video />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+      <Process />
       <Testimonials />
-      <Pricing />
       <Contact />
     </>
   );
