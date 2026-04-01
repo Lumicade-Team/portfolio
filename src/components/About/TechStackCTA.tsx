@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react";
 import { techStack } from "./aboutData";
 
 const TechStackCTA = () => (
@@ -58,9 +59,7 @@ const TechStackCTA = () => (
                 className="group inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-lumi-offwhite transition-all hover:bg-primary/90"
               >
                 Start a Project
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <Link
                 href="/#services"

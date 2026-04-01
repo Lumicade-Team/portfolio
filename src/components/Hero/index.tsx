@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const Hero = () => {
   return (
     <section
@@ -27,7 +29,6 @@ const Hero = () => {
               <text x="35" y="200" fill="#6dddff" fontFamily="monospace" fontSize="28" letterSpacing="6">10010110 01011010</text>
               <text x="85" y="242" fill="#a68cff" fontFamily="monospace" fontSize="28" letterSpacing="6">01100101 10110011</text>
             </pattern>
-            {/* Radial fade to create globe illusion */}
             <radialGradient id="globe-fade" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="white" stopOpacity="1" />
               <stop offset="60%" stopColor="white" stopOpacity="0.8" />
@@ -38,11 +39,9 @@ const Hero = () => {
               <rect width="1000" height="1000" fill="url(#globe-fade)" />
             </mask>
           </defs>
-          {/* Globe body — binary text masked into a sphere */}
           <g mask="url(#globe-mask)">
             <rect width="1000" height="1000" fill="url(#binary-grid)" />
           </g>
-          {/* Equator and meridian arcs for 3D depth */}
           <ellipse cx="500" cy="500" rx="420" ry="420" fill="none" stroke="#97a9ff" strokeWidth="0.5" opacity="0.3" />
           <ellipse cx="500" cy="500" rx="420" ry="180" fill="none" stroke="#6dddff" strokeWidth="0.5" opacity="0.2" />
           <ellipse cx="500" cy="500" rx="180" ry="420" fill="none" stroke="#a68cff" strokeWidth="0.5" opacity="0.2" />
@@ -50,7 +49,6 @@ const Hero = () => {
           <ellipse cx="500" cy="500" rx="420" ry="300" fill="none" stroke="#6dddff" strokeWidth="0.3" opacity="0.15" />
         </svg>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
-        {/* Ambient glow behind globe */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full" />
       </div>
 
@@ -66,18 +64,19 @@ const Hero = () => {
           visionary brands who demand precision engineering.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          <a
-            href="#services"
-            className="w-full md:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-base font-extrabold uppercase rounded-md hover:shadow-[0_0_20px_rgba(151,169,255,0.3)] transition-all duration-300"
-          >
-            Explore Our Work
-          </a>
-          <a
-            href="#contact"
-            className="w-full md:w-auto px-10 py-4 border border-outline-variant/30 text-on-surface font-headline text-base font-extrabold uppercase rounded-md hover:bg-white/5 transition-all duration-300"
-          >
-            Let&apos;s Talk
-          </a>
+          <Button variant="gradient" size="lg" asChild>
+            <a href="#services" className="w-full md:w-auto px-10 py-4 text-base">
+              Explore Our Work
+            </a>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <a
+              href="#contact"
+              className="w-full md:w-auto px-10 py-4 border-outline-variant/30 text-on-surface font-headline text-base font-extrabold uppercase hover:bg-white/5"
+            >
+              Let&apos;s Talk
+            </a>
+          </Button>
         </div>
       </div>
     </section>

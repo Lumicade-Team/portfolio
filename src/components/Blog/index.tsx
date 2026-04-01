@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FileText, ArrowRight } from "@phosphor-icons/react";
+import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/lib/blog";
 import SectionTitle from "../Common/SectionTitle";
 
@@ -37,9 +39,7 @@ const Blog = async () => {
                 </div>
               ) : (
                 <div className="flex aspect-video w-full items-center justify-center bg-gradient-to-br from-primary/5 to-teal/5">
-                  <svg className="h-10 w-10 text-primary/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                  </svg>
+                  <FileText size={40} className="text-primary/20" />
                 </div>
               )}
               <div className="flex flex-1 flex-col p-6">
@@ -70,15 +70,15 @@ const Blog = async () => {
 
         {posts.length > 3 && (
           <div className="mt-12 text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-lumi-offwhite transition hover:bg-primary/90"
-            >
-              View All Posts
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </Link>
+            <Button variant="gradient" asChild>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm"
+              >
+                View All Posts
+                <ArrowRight size={16} />
+              </Link>
+            </Button>
           </div>
         )}
       </div>

@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const Contact = () => {
   return (
     <section id="contact" className="py-32">
@@ -14,12 +16,14 @@ const Contact = () => {
               Join the elite brands working with Lumicade to build the next
               generation of digital excellence.
             </p>
-            <a
-              href="mailto:hello@lumicade.dev"
-              className="inline-block px-12 py-5 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-lg font-extrabold uppercase rounded-md shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
-            >
-              Start a Project
-            </a>
+            <Button variant="gradient" size="lg" asChild>
+              <a
+                href="mailto:hello@lumicade.dev"
+                className="px-12 py-5 text-lg shadow-2xl hover:scale-105 active:scale-95"
+              >
+                Start a Project
+              </a>
+            </Button>
           </div>
         </div>
       </div>
