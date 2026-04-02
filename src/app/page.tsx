@@ -1,7 +1,7 @@
 import ScrollUp from "@/components/Common/ScrollUp";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import Video from "@/components/Video";
+import Products from "@/components/Products";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -19,7 +19,7 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <Features />
-      <Video />
+      <Products />
       <Process />
       <Testimonials />
       <Contact />
