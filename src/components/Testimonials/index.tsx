@@ -1,3 +1,7 @@
+"use client";
+
+import { CaretLeft, CaretRight, Quotes } from "@phosphor-icons/react";
+
 const Testimonials = () => {
   return (
     <section id="testimonials" className="py-32 bg-surface overflow-hidden">
@@ -14,19 +18,17 @@ const Testimonials = () => {
             </p>
             <div className="flex gap-4">
               <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors">
-                <span className="material-symbols-outlined">chevron_left</span>
+                <CaretLeft size={20} />
               </button>
               <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors">
-                <span className="material-symbols-outlined">chevron_right</span>
+                <CaretRight size={20} />
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
             <div className="bg-surface-container-high p-10 rounded-xl glass-glow border border-outline-variant/10">
-              <span className="material-symbols-outlined text-primary text-4xl mb-6 block">
-                format_quote
-              </span>
+              <Quotes size={40} className="text-primary mb-6" weight="fill" />
               <p className="text-on-surface text-xl italic mb-8 font-light leading-relaxed">
                 &ldquo;Lumicade Solutions didn&apos;t just deliver a platform;
                 they delivered an evolution. Their precision and attention to
