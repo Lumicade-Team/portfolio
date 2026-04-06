@@ -18,7 +18,7 @@ const Contact = () => {
             </p>
             <Button variant="gradient" size="lg" asChild>
               <a
-                href="mailto:hello@lumicade.dev"
+                href="mailto:info@lumicade.dev?subject=Project%20Inquiry"
                 className="px-12 py-5 text-lg shadow-2xl hover:scale-105 active:scale-95"
               >
                 Start a Project
