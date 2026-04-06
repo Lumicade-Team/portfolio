@@ -1,3 +1,5 @@
+"use client";
+
 import { LinkedinLogo, XLogo, FacebookLogo } from "@phosphor-icons/react";
 
 const SharePost = () => {
