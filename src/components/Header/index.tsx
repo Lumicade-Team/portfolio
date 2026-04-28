@@ -25,7 +25,13 @@ const Header = () => {
       return;
     }
 
-    const sectionIds = ["home", "services", "products", "process", "testimonials"];
+    const sectionIds = [
+      "home",
+      "services",
+      "products",
+      "process",
+      "testimonials",
+    ];
 
     const handleScroll = () => {
       const scrollY = window.scrollY + 120;
@@ -82,10 +88,10 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/assets/imgs/Lumicade-Solutions-Logo-4096.svg"
+            src="/images/logo-with-title.png"
             alt="Lumicade Solutions"
-            width={60}
-            height={60}
+            width={84}
+            height={84}
           />
         </Link>
 

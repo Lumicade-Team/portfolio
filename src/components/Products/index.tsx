@@ -17,7 +17,36 @@ const Products = () => {
         </div>
 
         <div className="space-y-32">
-          {/* Product 1 */}
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+              <Image
+                alt="LumiAI"
+                width="1624"
+                height="1023"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                src="/images/products/lumi-ai.jpeg"
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+                LumiAI
+              </h3>
+              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                GPU-accelerated video analytics that detects people, vehicles,
+                and objects in real time — across all your cameras. Powered by
+                AI object detection and multi-object tracking, so you get
+                instant alerts without watching screens all day.
+              </p>
+              <a
+                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                href="https://lumiai.my/"
+              >
+                Learn More
+                <ArrowRightIcon size={20} />
+              </a>
+            </div>
+          </div>
+
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 order-2 md:order-1">
               <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
@@ -49,7 +78,6 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Product 2 */}
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
               <Image
