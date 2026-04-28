@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import EnquiryDialog from "@/components/EnquiryDialog";
 
 const Contact = () => {
   return (
@@ -16,14 +17,17 @@ const Contact = () => {
               Join the elite brands working with Lumicade to build the next
               generation of digital excellence.
             </p>
-            <Button variant="gradient" size="lg" asChild>
-              <a
-                href="mailto:info@lumicade.dev?subject=Project%20Inquiry"
-                className="px-12 py-5 text-lg shadow-2xl hover:scale-105 active:scale-95"
-              >
-                Start a Project
-              </a>
-            </Button>
+            <EnquiryDialog
+              trigger={
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  className="px-12 py-5 text-lg shadow-2xl hover:scale-105 active:scale-95"
+                >
+                  Start a Project
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>
