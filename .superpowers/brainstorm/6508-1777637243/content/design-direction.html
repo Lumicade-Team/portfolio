@@ -1,0 +1,110 @@
+<h2>Design Direction: How far to go?</h2>
+<p class="subtitle">The design extract is from Stripe.com — flat, light, purple. Your current site is dark glassmorphism. Pick the direction.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="full-stripe" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #f8fafd; padding: 20px; border-radius: 8px;">
+      <div style="background: #fff; border-radius: 8px; padding: 16px; box-shadow: rgba(23,23,23,0.06) 0px 3px 6px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <div style="width:80px; height:8px; background:#533afd; border-radius:4px;"></div>
+          <div style="width:40px; height:8px; background:#e8e9ff; border-radius:4px; margin-left:auto;"></div>
+          <div style="width:40px; height:8px; background:#e8e9ff; border-radius:4px;"></div>
+        </div>
+        <div style="height:48px; background:linear-gradient(135deg,#533afd,#302554); border-radius:6px; margin-bottom:10px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#fff; font-weight:300; font-size:13px; letter-spacing:0.3px;">Payments infrastructure for the internet</span>
+        </div>
+        <div style="display:flex; gap:8px; margin-bottom:10px;">
+          <div style="background:#533afd; color:#fff; padding:4px 12px; border-radius:4px; font-size:11px;">Start now</div>
+          <div style="background:#f2f7fe; color:#533afd; padding:4px 12px; border-radius:4px; font-size:11px;">Contact sales</div>
+        </div>
+        <div style="display:flex; gap:6px;">
+          <div style="flex:1; background:#f8fafd; border-radius:6px; padding:8px; border:1px solid #e5edf5;">
+            <div style="width:30px; height:4px; background:#533afd; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#50617a; border-radius:2px; margin-bottom:3px;"></div>
+            <div style="width:45px; height:3px; background:#50617a; border-radius:2px;"></div>
+          </div>
+          <div style="flex:1; background:#f8fafd; border-radius:6px; padding:8px; border:1px solid #e5edf5;">
+            <div style="width:30px; height:4px; background:#533afd; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#50617a; border-radius:2px; margin-bottom:3px;"></div>
+            <div style="width:45px; height:3px; background:#50617a; border-radius:2px;"></div>
+          </div>
+          <div style="flex:1; background:#f8fafd; border-radius:6px; padding:8px; border:1px solid #e5edf5;">
+            <div style="width:30px; height:4px; background:#533afd; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#50617a; border-radius:2px; margin-bottom:3px;"></div>
+            <div style="width:45px; height:3px; background:#50617a; border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Full Stripe Aesthetic</h3>
+      <p>Light backgrounds (#f8fafd), purple primary (#533afd), flat design, light-weight typography (300), subtle shadows. Complete redesign away from dark theme.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="dark-stripe-colors" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0b0e14; padding: 20px; border-radius: 8px;">
+      <div style="background: rgba(22,26,33,0.8); backdrop-filter: blur(12px); border-radius: 8px; padding: 16px; border: 1px solid rgba(255,255,255,0.08);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <div style="width:80px; height:8px; background:#7c6afd; border-radius:4px;"></div>
+          <div style="width:40px; height:8px; background:rgba(124,106,253,0.2); border-radius:4px; margin-left:auto;"></div>
+          <div style="width:40px; height:8px; background:rgba(124,106,253,0.2); border-radius:4px;"></div>
+        </div>
+        <div style="height:48px; background:linear-gradient(135deg,#533afd,#7c6afd); border-radius:6px; margin-bottom:10px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#fff; font-weight:300; font-size:13px; letter-spacing:0.3px;">Payments infrastructure for the internet</span>
+        </div>
+        <div style="display:flex; gap:8px; margin-bottom:10px;">
+          <div style="background:#533afd; color:#fff; padding:4px 12px; border-radius:4px; font-size:11px;">Start now</div>
+          <div style="background:rgba(83,58,253,0.15); color:#a89dff; padding:4px 12px; border-radius:4px; font-size:11px; border:1px solid rgba(83,58,253,0.3);">Contact sales</div>
+        </div>
+        <div style="display:flex; gap:6px;">
+          <div style="flex:1; background:rgba(255,255,255,0.04); border-radius:6px; padding:8px; border:1px solid rgba(255,255,255,0.06); box-shadow:0 0 20px rgba(83,58,253,0.08);">
+            <div style="width:30px; height:4px; background:#7c6afd; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#a9abb3; border-radius:2px; margin-bottom:3px; opacity:0.5;"></div>
+            <div style="width:45px; height:3px; background:#a9abb3; border-radius:2px; opacity:0.5;"></div>
+          </div>
+          <div style="flex:1; background:rgba(255,255,255,0.04); border-radius:6px; padding:8px; border:1px solid rgba(255,255,255,0.06); box-shadow:0 0 20px rgba(83,58,253,0.08);">
+            <div style="width:30px; height:4px; background:#a68cff; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#a9abb3; border-radius:2px; margin-bottom:3px; opacity:0.5;"></div>
+            <div style="width:45px; height:3px; background:#a9abb3; border-radius:2px; opacity:0.5;"></div>
+          </div>
+          <div style="flex:1; background:rgba(255,255,255,0.04); border-radius:6px; padding:8px; border:1px solid rgba(255,255,255,0.06); box-shadow:0 0 20px rgba(83,58,253,0.08);">
+            <div style="width:30px; height:4px; background:#6dddff; border-radius:2px; margin-bottom:6px;"></div>
+            <div style="width:60px; height:3px; background:#a9abb3; border-radius:2px; margin-bottom:3px; opacity:0.5;"></div>
+            <div style="width:45px; height:3px; background:#a9abb3; border-radius:2px; opacity:0.5;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Dark Theme + Stripe Colors</h3>
+      <p>Keep dark backgrounds and glassmorphism. Replace blue accent with Stripe's purple (#533afd). Inherit Stripe's spacing scale and typography weight preferences.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="tokens-only" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #0b0e14; padding: 20px; border-radius: 8px;">
+      <div style="background: rgba(22,26,33,0.8); border-radius: 8px; padding: 16px; border: 1px solid rgba(255,255,255,0.08);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <div style="width:80px; height:8px; background:#97a9ff; border-radius:4px;"></div>
+          <div style="width:40px; height:8px; background:rgba(151,169,255,0.2); border-radius:4px; margin-left:auto;"></div>
+          <div style="width:40px; height:8px; background:rgba(151,169,255,0.2); border-radius:4px;"></div>
+        </div>
+        <div style="height:48px; background:linear-gradient(135deg,#97a9ff,#6dddff); border-radius:6px; margin-bottom:10px; display:flex;align-items:center;justify-content:center;">
+          <span style="color:#000; font-weight:400; font-size:13px; letter-spacing:-0.2px;">Build Faster. Launch Smarter.</span>
+        </div>
+        <div style="display:flex; gap:8px; margin-bottom:10px;">
+          <div style="background:#97a9ff; color:#000; padding:4px 12px; border-radius:4px; font-size:11px;">Get Started</div>
+          <div style="background:rgba(151,169,255,0.1); color:#97a9ff; padding:4px 12px; border-radius:4px; font-size:11px; border:1px solid rgba(151,169,255,0.2);">Learn more</div>
+        </div>
+        <div style="color:#a9abb3; font-size:9px; text-align:center; padding-top:4px;">Stripe spacing scale · Tighter tracking · Lighter heading weights</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Tokens Only (Subtle Refinement)</h3>
+      <p>Keep current colors and dark theme. Only adopt Stripe's spacing scale, tighter letter-spacing, and lighter heading font weights. Least disruptive.</p>
+    </div>
+  </div>
+
+</div>

@@ -20,7 +20,7 @@ export default function RootLayout({
   const isAdmin = pathname.startsWith("/admin");
 
   return (
-    <html suppressHydrationWarning lang="en" className="dark">
+    <html suppressHydrationWarning lang="en">
       <head />
       <body className={`bg-background text-on-surface font-body selection:bg-primary/30 ${inter.variable} ${manrope.variable} ${inter.className}`}>
         <Providers>

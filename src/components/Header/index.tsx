@@ -83,8 +83,8 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-surface-container-high/60 backdrop-blur-xl shadow-stripe-md">
-      <nav className="flex justify-between items-center px-6 md:px-12 py-4 w-full">
+    <header className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-3xl">
+      <nav className="flex justify-between items-center px-6 md:px-12 py-4 w-full max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -102,7 +102,7 @@ const Header = () => {
               <Link
                 href={menuItem.path!}
                 onClick={(e) => handleNavClick(e, menuItem.path!)}
-                className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors duration-sm ease-out-stripe ${
+                className={`font-headline text-sm tracking-wide font-medium transition-colors duration-sm ease-out-stripe ${
                   isActive(menuItem.path!)
                     ? "text-on-surface"
                     : "text-on-surface-variant hover:text-on-surface"
@@ -119,7 +119,7 @@ const Header = () => {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="hidden lg:inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-light uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
+            className="hidden lg:inline-block px-5 py-2 bg-primary text-white font-headline text-sm font-medium rounded-md active:scale-90 transition-all duration-sm ease-out-stripe hover:bg-primary-dim shadow-sm"
           >
             Get Started
           </Link>
@@ -136,7 +136,7 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-surface-container-high/95 backdrop-blur-xl border-outline-variant/10 w-72"
+              className="bg-white border-outline-variant w-72"
             >
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <ul className="flex flex-col py-8 space-y-6">
@@ -145,7 +145,7 @@ const Header = () => {
                     <Link
                       href={menuItem.path!}
                       onClick={(e) => handleNavClick(e, menuItem.path!)}
-                      className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors duration-sm ease-out-stripe ${
+                      className={`font-headline text-sm tracking-wide font-medium transition-colors duration-sm ease-out-stripe ${
                         isActive(menuItem.path!)
                           ? "text-on-surface"
                           : "text-on-surface-variant hover:text-on-surface"
@@ -159,7 +159,7 @@ const Header = () => {
                   <Link
                     href="/#contact"
                     onClick={(e) => handleNavClick(e, "/#contact")}
-                    className="inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-light uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
+                    className="inline-block px-5 py-2 bg-primary text-white font-headline text-sm font-medium rounded-md active:scale-90 transition-all duration-sm ease-out-stripe hover:bg-primary-dim"
                   >
                     Get Started
                   </Link>
