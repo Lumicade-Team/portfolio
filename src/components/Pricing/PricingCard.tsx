@@ -18,8 +18,8 @@ const PricingCards = () => (
     {pricingCards.map((card) => {
       const styles = variantStyles[card.variant];
       return (
-        <div key={card.title} className="rounded-xl bg-white p-10 shadow-card dark:bg-dark">
-          <h3 className="mb-2 text-2xl font-bold text-lumi-navy dark:text-lumi-offwhite">
+        <div key={card.title} className="rounded-lg bg-white p-10 shadow-stripe-lg dark:bg-dark">
+          <h3 className="mb-2 text-2xl font-light text-lumi-navy dark:text-lumi-offwhite">
             {card.title}
           </h3>
           <p className="mb-6 text-body-color dark:text-body-color-dark">

@@ -53,7 +53,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
-        <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[0.9]">
+        <h1 className="font-headline text-5xl md:text-8xl font-light tracking-normal text-on-surface mb-8 leading-[0.9]">
           We Architect <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
             Digital Excellence.
@@ -72,7 +72,7 @@ const Hero = () => {
           <Button variant="outline" size="lg" asChild>
             <a
               href="#contact"
-              className="w-full md:w-auto px-10 py-4 border-outline-variant/30 text-on-surface font-headline text-base font-extrabold uppercase hover:bg-white/5"
+              className="w-full md:w-auto px-10 py-4 border-outline-variant/30 text-on-surface font-headline text-base font-light uppercase hover:bg-white/5"
             >
               Let&apos;s Talk
             </a>

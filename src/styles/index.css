@@ -106,6 +106,33 @@ html {
 
   --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
 
+  /* Stripe spacing scale */
+  --spacing-s14: 28px;
+  --spacing-s16: 32px;
+  --spacing-s20: 40px;
+  --spacing-s24: 48px;
+  --spacing-s26: 52px;
+  --spacing-s30: 60px;
+  --spacing-s32: 64px;
+  --spacing-s36: 72px;
+  --spacing-s40: 80px;
+  --spacing-s48: 96px;
+
+  /* Stripe motion tokens */
+  --duration-xs: 100ms;
+  --duration-sm: 200ms;
+  --duration-md: 300ms;
+  --duration-lg: 500ms;
+  --duration-xl: 800ms;
+  --ease-stripe: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-out-stripe: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.6, 0, 0.2, 0.5);
+
+  /* Stripe shadow tokens (neutral elevation, replaces colored glow) */
+  --shadow-stripe-md: rgba(23, 23, 23, 0.06) 0px 3px 6px 0px;
+  --shadow-stripe-lg: rgba(0, 0, 0, 0.2) 0px 0px 32px 8px;
+  --shadow-stripe-xl: rgba(0, 0, 0, 0.15) 0px 16px 32px 0px, rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+
   /* Fonts */
   --font-headline: 'Manrope', 'Inter', 'Arial', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;

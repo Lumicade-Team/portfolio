@@ -83,7 +83,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-surface-container-high/60 backdrop-blur-xl shadow-glass">
+    <header className="fixed top-0 w-full z-50 bg-surface-container-high/60 backdrop-blur-xl shadow-stripe-md">
       <nav className="flex justify-between items-center px-6 md:px-12 py-4 w-full">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -102,7 +102,7 @@ const Header = () => {
               <Link
                 href={menuItem.path!}
                 onClick={(e) => handleNavClick(e, menuItem.path!)}
-                className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors ${
+                className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors duration-sm ease-out-stripe ${
                   isActive(menuItem.path!)
                     ? "text-on-surface"
                     : "text-on-surface-variant hover:text-on-surface"
@@ -119,7 +119,7 @@ const Header = () => {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="hidden lg:inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform"
+            className="hidden lg:inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
           >
             Get Started
           </Link>
@@ -145,7 +145,7 @@ const Header = () => {
                     <Link
                       href={menuItem.path!}
                       onClick={(e) => handleNavClick(e, menuItem.path!)}
-                      className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors ${
+                      className={`font-headline text-sm tracking-wide font-medium uppercase transition-colors duration-sm ease-out-stripe ${
                         isActive(menuItem.path!)
                           ? "text-on-surface"
                           : "text-on-surface-variant hover:text-on-surface"
@@ -159,7 +159,7 @@ const Header = () => {
                   <Link
                     href="/#contact"
                     onClick={(e) => handleNavClick(e, "/#contact")}
-                    className="inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform"
+                    className="inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
                   >
                     Get Started
                   </Link>

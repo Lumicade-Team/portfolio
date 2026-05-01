@@ -8,7 +8,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight mb-8">
+            <h2 className="font-headline text-4xl md:text-6xl font-light tracking-normal mb-8">
               Trusted by Visionaries
             </h2>
             <p className="text-on-surface-variant text-lg mb-12">
@@ -17,17 +17,17 @@ const Testimonials = () => {
               Lumicade standard.
             </p>
             <div className="flex gap-4">
-              <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors duration-sm ease-out-stripe">
                 <CaretLeft size={20} />
               </button>
-              <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <button className="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-white/5 transition-colors duration-sm ease-out-stripe">
                 <CaretRight size={20} />
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            <div className="bg-surface-container-high p-10 rounded-xl glass-glow border border-outline-variant/10">
+            <div className="bg-surface-container-high p-10 rounded-lg glass-glow border border-outline-variant/10">
               <Quotes size={40} className="text-primary mb-6" weight="fill" />
               <p className="text-on-surface text-xl italic mb-8 font-light leading-relaxed">
                 &ldquo;Lumicade Solutions didn&apos;t just deliver a platform;
@@ -43,7 +43,7 @@ const Testimonials = () => {
                   />
                 </div>
                 <div>
-                  <h5 className="font-headline font-bold text-on-surface">
+                  <h5 className="font-headline font-light text-on-surface">
                     Julian Thorne
                   </h5>
                   <p className="text-on-surface-variant text-xs uppercase tracking-widest">

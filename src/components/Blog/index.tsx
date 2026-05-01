@@ -28,14 +28,14 @@ const Blog = async () => {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-lumi-lightblue bg-white shadow-card transition-all duration-300 hover:border-primary hover:shadow-feature-2 dark:border-lumi-mutednav dark:bg-dark dark:hover:border-primary"
+              className="group flex h-full flex-col overflow-hidden rounded-lg border border-lumi-lightblue bg-white shadow-stripe-lg transition-all duration-md ease-out-stripe hover:border-primary dark:border-lumi-mutednav dark:bg-dark dark:hover:border-primary"
             >
               {post.coverImage ? (
                 <div className="aspect-video w-full overflow-hidden">
                   <img
                     src={post.coverImage}
                     alt={post.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-lg ease-smooth group-hover:scale-105"
                   />
                 </div>
               ) : (
