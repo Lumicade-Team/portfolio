@@ -9,7 +9,7 @@ const Contact = () => {
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-tertiary/10 blur-[120px] rounded-full" />
           <div className="relative z-10">
-            <h2 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-8">
+            <h2 className="font-headline text-5xl md:text-7xl font-light tracking-normal mb-8">
               Ready to scale <br />
               your vision?
             </h2>

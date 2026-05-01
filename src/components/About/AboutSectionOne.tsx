@@ -33,7 +33,7 @@ const AboutSectionOne = () => {
                 </span>
               </div>
 
-              <h1 className="mb-8 text-4xl font-extrabold leading-[1.1] text-lumi-offwhite sm:text-5xl md:text-[52px]">
+              <h1 className="mb-8 text-4xl font-light leading-[1.1] text-lumi-offwhite sm:text-5xl md:text-[52px]">
                 Software built with
                 <span className="relative ml-2 inline-block">
                   <span className="relative z-10">intent</span>
@@ -56,13 +56,13 @@ const AboutSectionOne = () => {
                 {stats.map((stat, i) => (
                   <div
                     key={stat.label}
-                    className={`rounded-2xl border p-7 transition-all duration-300 hover:border-primary/40 ${
+                    className={`rounded-lg border p-7 transition-all duration-md ease-out-stripe hover:border-primary/40 ${
                       i % 2 === 0
                         ? "border-lumi-mutednav/40 bg-lumi-mutednav/10"
                         : "border-primary/20 bg-primary/[0.04]"
                     }`}
                   >
-                    <p className={`mb-1 text-3xl font-extrabold tracking-tight ${
+                    <p className={`mb-1 text-3xl font-light tracking-normal ${
                       i % 2 === 0 ? "text-teal" : "text-primary"
                     }`}>
                       {stat.value}

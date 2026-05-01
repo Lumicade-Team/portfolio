@@ -11,7 +11,7 @@ const Products = () => {
           <span className="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-4">
             The Suite
           </span>
-          <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight">
+          <h2 className="font-headline text-4xl md:text-6xl font-light tracking-normal">
             Proprietary Products
           </h2>
         </div>
@@ -23,12 +23,12 @@ const Products = () => {
                 alt="LumiAI"
                 width="1624"
                 height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
                 src="/images/products/lumi-ai.jpeg"
               />
             </div>
             <div className="flex-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
                 LumiAI
               </h3>
               <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
@@ -38,7 +38,7 @@ const Products = () => {
                 instant alerts without watching screens all day.
               </p>
               <a
-                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
                 href="https://lumiai.my/"
               >
                 Learn More
@@ -49,7 +49,7 @@ const Products = () => {
 
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 order-2 md:order-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
                 GajiSaya
               </h3>
               <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
@@ -60,7 +60,7 @@ const Products = () => {
                 blindsided at year-end.
               </p>
               <a
-                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
                 href="https://gajisaya.me/en"
               >
                 Learn More
@@ -72,7 +72,7 @@ const Products = () => {
                 alt="GajiSaya Dashboard"
                 width="1624"
                 height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
                 src="/images/products/gaji-saya.png"
               />
             </div>
@@ -84,12 +84,12 @@ const Products = () => {
                 alt="Bhumi"
                 width="1624"
                 height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-700 w-full"
+                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
                 src="/images/products/bhumi.png"
               />
             </div>
             <div className="flex-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
                 Bhumi
               </h3>
               <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
@@ -99,7 +99,7 @@ const Products = () => {
                 spaces (property, venues, campus tours).
               </p>
               <a
-                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300"
+                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
                 href="https://bhumi.my/"
               >
                 Learn More
