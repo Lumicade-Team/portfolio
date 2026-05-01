@@ -119,7 +119,7 @@ const Header = () => {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="hidden lg:inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
+            className="hidden lg:inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-light uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
           >
             Get Started
           </Link>
@@ -159,7 +159,7 @@ const Header = () => {
                   <Link
                     href="/#contact"
                     onClick={(e) => handleNavClick(e, "/#contact")}
-                    className="inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-bold uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
+                    className="inline-block px-6 py-2 bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed font-headline text-sm font-light uppercase rounded-md active:scale-90 transition-transform duration-sm ease-out-stripe"
                   >
                     Get Started
                   </Link>
