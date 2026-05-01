@@ -18,7 +18,7 @@ const Products = () => {
 
         <div className="space-y-32">
           <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+            <div className="flex-1 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
               <Image
                 alt="LumiAI"
                 width="1624"
@@ -67,7 +67,7 @@ const Products = () => {
                 <ArrowRightIcon size={20} />
               </a>
             </div>
-            <div className="flex-1 order-1 md:order-2 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+            <div className="flex-1 order-1 md:order-2 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
               <Image
                 alt="GajiSaya Dashboard"
                 width="1624"
@@ -79,7 +79,7 @@ const Products = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1 bg-surface-container-high rounded-xl p-4 shadow-2xl relative overflow-hidden group">
+            <div className="flex-1 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
               <Image
                 alt="Bhumi"
                 width="1624"
