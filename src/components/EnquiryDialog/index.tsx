@@ -103,7 +103,7 @@ const EnquiryDialog = ({ trigger }: EnquiryDialogProps) => {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl font-extrabold tracking-tighter">
+          <DialogTitle className="font-headline text-2xl font-light tracking-normal">
             Start a Project
           </DialogTitle>
           <DialogDescription className="text-on-surface-variant">
@@ -171,7 +171,7 @@ const EnquiryDialog = ({ trigger }: EnquiryDialogProps) => {
               type="submit"
               size="lg"
               disabled={submitting}
-              className="bg-primary font-headline font-bold uppercase tracking-widest text-on-primary shadow-[0_0_30px_rgba(151,169,255,0.25)] hover:shadow-[0_0_40px_rgba(151,169,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-60"
+              className="bg-primary font-headline font-light uppercase tracking-widest text-on-primary shadow-stripe-md hover:shadow-stripe-lg hover:scale-[1.02] active:scale-95 transition-all duration-md ease-out-stripe disabled:opacity-60"
             >
               <Send size={14} />
               {submitting ? "Sending..." : "Send Enquiry"}
