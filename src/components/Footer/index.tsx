@@ -124,13 +124,13 @@ const Footer = () => {
           <h4 className="text-white font-semibold text-sm uppercase mb-6 tracking-widest">
             Connect
           </h4>
-          <ul className="space-y-4">
+          <ul className="flex flex-col gap-4">
             <li>
               <a
                 href="https://www.linkedin.com/in/lumicade-solutions-490aa838b"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-sm ease-out-stripe"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <LinkedinLogo size={18} weight="duotone" aria-hidden="true" />
                 LinkedIn
@@ -141,7 +141,7 @@ const Footer = () => {
                 href="https://www.threads.com/@lumicade.dev?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <ThreadsLogo size={18} weight="duotone" aria-hidden="true" />
                 Threads
@@ -152,7 +152,7 @@ const Footer = () => {
                 href="https://api.whatsapp.com/send/?phone=601124104917"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <WhatsappLogo size={18} weight="duotone" aria-hidden="true" />
                 WhatsApp
@@ -163,7 +163,7 @@ const Footer = () => {
                 href="https://www.instagram.com/lumicade.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <InstagramLogo size={18} weight="duotone" aria-hidden="true" />
                 Instagram
@@ -174,7 +174,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61588829380466"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-white/50 hover:text-white transition-colors duration-sm ease-out-stripe"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <FacebookLogo size={18} weight="duotone" aria-hidden="true" />
                 Facebook
@@ -185,13 +185,12 @@ const Footer = () => {
                 href="https://github.com/Lumicade-Team"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-white/50 hover:text-white transition-colors duration-sm ease-out-stripe"
+                className="flex items-center gap-2 font-body text-sm text-white/50 hover:text-white transition-colors"
               >
                 <GithubLogo size={18} weight="duotone" aria-hidden="true" />
                 GitHub
               </a>
             </li>
-           
           </ul>
         </div>
       </div>
