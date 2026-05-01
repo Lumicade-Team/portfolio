@@ -2,111 +2,127 @@
 
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+const products = [
+  {
+    name: "LumiAI",
+    description:
+      "LumiAI delivers GPU-accelerated video analytics — real-time detection of people, vehicles, and objects across all your cameras with Lumicade.",
+    href: "https://lumiai.my/",
+    src: "/images/products/lumi-ai.jpeg",
+    color: "#172141",
+    logo: "/images/products/logo-lumiai.png",
+  },
+  {
+    name: "GajiSaya",
+    description:
+      "GajiSaya helps Malaysian gig riders aggregate income, track expenses, and estimate tax obligations in real-time with Lumicade.",
+    href: "https://gajisaya.me/en",
+    src: "/images/products/gaji-saya.png",
+    color: "#de7348",
+    logo: "/images/products/logo-gajisaya.png",
+  },
+  {
+    name: "Bhumi",
+    description:
+      "Bhumi powers interactive 360° virtual tours for properties, venues, and campuses — built and deployed with Lumicade.",
+    href: "https://bhumi.my/",
+    src: "/images/products/bhumi.png",
+    color: "#f8f9fa",
+    logo: "/images/products/logo-bhumi.png",
+  },
+];
 
 const Products = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = cardRefs.current.findIndex((r) => r === entry.target);
+            if (index !== -1) setActiveIndex(index);
+          }
+        });
+      },
+      { threshold: 0.6, root: container },
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="products" className="py-32 bg-surface">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
-          <span className="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-widest mb-4">
-            The Suite
-          </span>
-          <h2 className="font-headline text-4xl md:text-6xl font-light tracking-normal">
-            Proprietary Products
-          </h2>
-        </div>
-
-        <div className="space-y-32">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
-              <Image
-                alt="LumiAI"
-                width="1624"
-                height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
-                src="/images/products/lumi-ai.jpeg"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
-                LumiAI
-              </h3>
-              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                GPU-accelerated video analytics that detects people, vehicles,
-                and objects in real time — across all your cameras. Powered by
-                AI object detection and multi-object tracking, so you get
-                instant alerts without watching screens all day.
-              </p>
-              <a
-                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
-                href="https://lumiai.my/"
+    <section id="products" className="py-32 bg-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div
+          ref={containerRef}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-5 -mx-6 px-6 pb-2 [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible"
+        >
+          {products.map((product, index) => (
+            <div
+              key={product.name}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              className="w-[85vw] flex-shrink-0 snap-center md:w-auto group relative z-0 hover:z-10 transition-transform duration-300 ease-out hover:scale-x-[1.03] origin-center"
+            >
+              <div
+                className={`relative overflow-hidden rounded aspect-[4/5] transition-transform duration-300 ease-out md:scale-100 ${
+                  index === activeIndex ? "scale-100" : "scale-[0.88]"
+                }`}
+                style={
+                  product.color ? { backgroundColor: product.color } : undefined
+                }
               >
-                Learn More
-                <ArrowRightIcon size={20} />
-              </a>
+                {product.logo ? (
+                  <div className="absolute inset-0 flex items-center justify-center p-12">
+                    <Image
+                      alt={product.name}
+                      src={product.logo}
+                      width={240}
+                      height={240}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    src={product.src}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <span className="text-white font-medium text-lg">
+                    {product.name}
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <p className="text-on-surface-variant text-sm leading-relaxed mb-3">
+                  {product.description}
+                </p>
+                <a
+                  className="inline-flex items-center gap-1.5 text-primary text-sm font-medium hover:gap-3 transition-all duration-200 ease-out"
+                  href={product.href}
+                >
+                  Discover {product.name} <ArrowRightIcon size={16} />
+                </a>
+              </div>
             </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1 order-2 md:order-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
-                GajiSaya
-              </h3>
-              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                A web and mobile app for Malaysian Grab, Foodpanda, Lalamove,
-                and Shopee Food riders/drivers to automatically aggregate income
-                from multiple platforms, track business expenses, and estimate
-                their LHDN tax obligation in real-time — so they&apos;re never
-                blindsided at year-end.
-              </p>
-              <a
-                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
-                href="https://gajisaya.me/en"
-              >
-                Learn More
-                <ArrowRightIcon size={20} />
-              </a>
-            </div>
-            <div className="flex-1 order-1 md:order-2 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
-              <Image
-                alt="GajiSaya Dashboard"
-                width="1624"
-                height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
-                src="/images/products/gaji-saya.png"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="flex-1 bg-surface-container-high rounded-lg p-4 shadow-2xl relative overflow-hidden group">
-              <Image
-                alt="Bhumi"
-                width="1624"
-                height="1023"
-                className="rounded-lg border border-outline-variant/20 group-hover:scale-105 transition-transform duration-xl ease-smooth w-full"
-                src="/images/products/bhumi.png"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-headline text-3xl md:text-4xl font-light mb-6">
-                Bhumi
-              </h3>
-              <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                A web-based interactive virtual tour builder. Users can upload
-                360° panoramic scenes, add interactive hotspots, and create
-                navigable tours — similar to Google Street View but for custom
-                spaces (property, venues, campus tours).
-              </p>
-              <a
-                className="inline-flex items-center gap-2 text-primary font-light hover:gap-4 transition-all duration-md ease-out-stripe"
-                href="https://bhumi.my/"
-              >
-                Learn More
-                <ArrowRightIcon size={20} />
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

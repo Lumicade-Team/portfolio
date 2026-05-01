@@ -18,68 +18,68 @@ html {
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
 
-  /* Surface hierarchy */
-  --color-surface: #0b0e14;
-  --color-surface-dim: #0b0e14;
-  --color-surface-bright: #282c36;
-  --color-surface-variant: #22262f;
-  --color-surface-tint: #97a9ff;
-  --color-surface-container-lowest: #000000;
-  --color-surface-container-low: #10131a;
-  --color-surface-container: #161a21;
-  --color-surface-container-high: #1c2028;
-  --color-surface-container-highest: #22262f;
-  --color-background: #0b0e14;
-  --color-on-background: #ecedf6;
-  --color-on-surface: #ecedf6;
-  --color-on-surface-variant: #a9abb3;
-  --color-inverse-surface: #f9f9ff;
-  --color-inverse-on-surface: #52555c;
+  /* Surface hierarchy — light theme */
+  --color-surface: #ffffff;
+  --color-surface-dim: #f6f9fc;
+  --color-surface-bright: #ffffff;
+  --color-surface-variant: #eef2f7;
+  --color-surface-tint: #635bff;
+  --color-surface-container-lowest: #f0f4f8;
+  --color-surface-container-low: #f6f9fc;
+  --color-surface-container: #eef2f7;
+  --color-surface-container-high: #e6ecf3;
+  --color-surface-container-highest: #d6dfe8;
+  --color-background: #f6f9fc;
+  --color-on-background: #0a2540;
+  --color-on-surface: #0a2540;
+  --color-on-surface-variant: #425466;
+  --color-inverse-surface: #0a2540;
+  --color-inverse-on-surface: #f6f9fc;
 
-  /* Primary */
-  --color-primary: #97a9ff;
-  --color-primary-dim: #3e65ff;
-  --color-primary-container: #859aff;
-  --color-primary-fixed: #859aff;
-  --color-primary-fixed-dim: #718bff;
-  --color-on-primary: #002283;
-  --color-on-primary-container: #001867;
-  --color-on-primary-fixed: #000000;
-  --color-on-primary-fixed-variant: #00207e;
-  --color-inverse-primary: #134af1;
+  /* Primary — Stripe purple-indigo */
+  --color-primary: #635bff;
+  --color-primary-dim: #4f46e5;
+  --color-primary-container: #ede9ff;
+  --color-primary-fixed: #635bff;
+  --color-primary-fixed-dim: #4f46e5;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #3730a3;
+  --color-on-primary-fixed: #ffffff;
+  --color-on-primary-fixed-variant: #4338ca;
+  --color-inverse-primary: #a5b4fc;
 
   /* Secondary */
-  --color-secondary: #a68cff;
-  --color-secondary-dim: #7e51ff;
-  --color-secondary-container: #591adc;
-  --color-secondary-fixed: #d8caff;
-  --color-secondary-fixed-dim: #cabaff;
-  --color-on-secondary: #25006b;
-  --color-on-secondary-container: #e4daff;
-  --color-on-secondary-fixed: #3b00a0;
-  --color-on-secondary-fixed-variant: #591bdc;
+  --color-secondary: #7c3aed;
+  --color-secondary-dim: #6d28d9;
+  --color-secondary-container: #ede9fe;
+  --color-secondary-fixed: #ddd6fe;
+  --color-secondary-fixed-dim: #c4b5fd;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #4c1d95;
+  --color-on-secondary-fixed: #4c1d95;
+  --color-on-secondary-fixed-variant: #5b21b6;
 
   /* Tertiary */
-  --color-tertiary: #6dddff;
-  --color-tertiary-dim: #00c3eb;
-  --color-tertiary-container: #00d2fd;
-  --color-tertiary-fixed: #00d2fd;
-  --color-tertiary-fixed-dim: #00c3eb;
-  --color-on-tertiary: #004c5e;
-  --color-on-tertiary-container: #004352;
-  --color-on-tertiary-fixed: #002c37;
-  --color-on-tertiary-fixed-variant: #004c5d;
+  --color-tertiary: #06b6d4;
+  --color-tertiary-dim: #0891b2;
+  --color-tertiary-container: #cffafe;
+  --color-tertiary-fixed: #cffafe;
+  --color-tertiary-fixed-dim: #a5f3fc;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #164e63;
+  --color-on-tertiary-fixed: #164e63;
+  --color-on-tertiary-fixed-variant: #0e7490;
 
   /* Error */
-  --color-error: #ff716c;
-  --color-error-dim: #d7383b;
-  --color-error-container: #9f0519;
-  --color-on-error: #490006;
-  --color-on-error-container: #ffa8a3;
+  --color-error: #ef4444;
+  --color-error-dim: #dc2626;
+  --color-error-container: #fee2e2;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #7f1d1d;
 
   /* Outline */
-  --color-outline: #73757d;
-  --color-outline-variant: #45484f;
+  --color-outline: #c3cdd8;
+  --color-outline-variant: #e0e8f0;
 
   /* Legacy tokens (kept for non-homepage pages) */
   --color-current: currentColor;
@@ -99,7 +99,7 @@ html {
   --shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
   --shadow-sticky: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   --shadow-sticky-dark: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
-  --shadow-card: 0 4px 24px rgba(151, 169, 255, 0.08);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
   --shadow-submit: 0px 5px 20px rgba(4, 10, 34, 0.1);
   --shadow-submit-dark: 0px 5px 20px rgba(4, 10, 34, 0.1);
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
@@ -214,6 +214,6 @@ html {
   }
 
   .glass-glow {
-    box-shadow: inset 0 1px 0 0 rgba(69, 72, 79, 0.2);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
   }
 }

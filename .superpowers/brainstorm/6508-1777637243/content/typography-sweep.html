@@ -1,0 +1,130 @@
+<h2>Typography + Component Sweep</h2>
+<p class="subtitle">Before → After for all heading classes across components. Colors and backgrounds unchanged.</p>
+
+<div class="section">
+  <h3>Heading weight changes (all components)</h3>
+  <div style="display:flex; flex-direction:column; gap:16px; margin-top:12px;">
+
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:16px; border:1px solid rgba(255,255,255,0.06);">
+      <div class="label" style="margin-bottom:10px;">Hero h1 — src/components/Hero/index.tsx</div>
+      <div style="display:flex; gap:20px; align-items:baseline; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">BEFORE</div>
+          <div style="font-size:28px; font-weight:800; letter-spacing:-0.04em; color:#ecedf6; line-height:0.9;">Build Faster.<br/>Launch Smarter.</div>
+          <code style="font-size:10px; color:#a9abb3;">font-extrabold tracking-tighter</code>
+        </div>
+        <div style="color:#555; align-self:center; font-size:20px;">→</div>
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">AFTER</div>
+          <div style="font-size:28px; font-weight:300; letter-spacing:0.01em; color:#ecedf6; line-height:0.95;">Build Faster.<br/>Launch Smarter.</div>
+          <code style="font-size:10px; color:#a9abb3;">font-light tracking-normal</code>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:16px; border:1px solid rgba(255,255,255,0.06);">
+      <div class="label" style="margin-bottom:10px;">Section headings — Features, About, Pricing, etc.</div>
+      <div style="display:flex; gap:20px; align-items:baseline; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">BEFORE</div>
+          <div style="font-size:20px; font-weight:700; letter-spacing:-0.02em; color:#ecedf6;">Everything you need</div>
+          <code style="font-size:10px; color:#a9abb3;">font-bold tracking-tight</code>
+        </div>
+        <div style="color:#555; align-self:center; font-size:20px;">→</div>
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">AFTER</div>
+          <div style="font-size:20px; font-weight:300; letter-spacing:0.01em; color:#ecedf6;">Everything you need</div>
+          <code style="font-size:10px; color:#a9abb3;">font-light tracking-normal</code>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:16px; border:1px solid rgba(255,255,255,0.06);">
+      <div class="label" style="margin-bottom:10px;">Card headings — Features cards, Pricing, Blog</div>
+      <div style="display:flex; gap:20px; align-items:baseline; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">BEFORE</div>
+          <div style="font-size:15px; font-weight:700; color:#ecedf6;">AI-Powered Tools</div>
+          <code style="font-size:10px; color:#a9abb3;">font-bold text-2xl</code>
+        </div>
+        <div style="color:#555; align-self:center; font-size:20px;">→</div>
+        <div>
+          <div style="font-size:10px; color:#888; margin-bottom:4px;">AFTER</div>
+          <div style="font-size:15px; font-weight:300; color:#ecedf6;">AI-Powered Tools</div>
+          <code style="font-size:10px; color:#a9abb3;">font-light text-2xl</code>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>Radius + Shadow sweep</h3>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;">
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:14px; border:1px solid rgba(255,255,255,0.06); flex:1; min-width:200px;">
+      <div class="label" style="margin-bottom:8px;">Cards (Features, Blog, Pricing)</div>
+      <div style="font-size:12px; color:#a9abb3;"><code>rounded-xl</code> → <code>rounded-lg</code><br/>12px → 8px</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:14px; border:1px solid rgba(255,255,255,0.06); flex:1; min-width:200px;">
+      <div class="label" style="margin-bottom:8px;">Shadows (cards + header)</div>
+      <div style="font-size:12px; color:#a9abb3;"><code>shadow-card</code> → <code>shadow-stripe-lg</code><br/><code>shadow-glass</code> → <code>shadow-stripe-md</code></div>
+    </div>
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:14px; border:1px solid rgba(255,255,255,0.06); flex:1; min-width:200px;">
+      <div class="label" style="margin-bottom:8px;">Transitions (all components)</div>
+      <div style="font-size:12px; color:#a9abb3;"><code>duration-300</code> → <code>duration-md</code><br/><code>duration-500</code> → <code>duration-lg</code></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Files touched</h3>
+  <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/styles/index.css</code>
+      <span style="font-size:11px; color:#a9abb3;">— add spacing, motion, shadow tokens</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Hero/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Features/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Header/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/About/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Pricing/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Testimonials/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Blog/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Footer/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/Contact/index.tsx</code>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <div style="width:6px; height:6px; background:#97a9ff; border-radius:50%;"></div>
+      <code style="font-size:12px; color:#ecedf6;">src/components/ui/button.tsx</code>
+      <span style="font-size:11px; color:#a9abb3;">— update transition durations</span>
+    </div>
+  </div>
+</div>

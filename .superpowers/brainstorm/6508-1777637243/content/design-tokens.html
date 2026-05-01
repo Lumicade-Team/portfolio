@@ -1,0 +1,129 @@
+<h2>Design: Token additions to index.css</h2>
+<p class="subtitle">New CSS custom properties added to the <code>@theme</code> block. Zero changes to colors or dark theme.</p>
+
+<div class="section">
+  <h3>1 — Spacing scale</h3>
+  <p>Named tokens matching Stripe's scale. Used as Tailwind utilities: <code>p-s24</code>, <code>gap-s16</code>, etc.</p>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;">
+    <div style="text-align:center;">
+      <div style="width:28px; height:28px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s14<br/>28px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:32px; height:32px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s16<br/>32px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:40px; height:40px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s20<br/>40px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:48px; height:48px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s24<br/>48px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:52px; height:52px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s26<br/>52px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:60px; height:60px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s30<br/>60px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:64px; height:64px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s32<br/>64px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:72px; height:72px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s36<br/>72px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:80px; height:80px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s40<br/>80px</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:96px; height:96px; background:rgba(151,169,255,0.3); border-radius:3px; margin:0 auto;"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:4px;">s48<br/>96px</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2 — Motion tokens</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;">
+    <div>
+      <div class="label">Durations</div>
+      <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#97a9ff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>duration-xs</code></span>
+          <span style="font-size:11px; color:#a9abb3; margin-left:auto;">100ms</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#97a9ff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>duration-sm</code></span>
+          <span style="font-size:11px; color:#a9abb3; margin-left:auto;">200ms</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#97a9ff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>duration-md</code></span>
+          <span style="font-size:11px; color:#a9abb3; margin-left:auto;">300ms</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#97a9ff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>duration-lg</code></span>
+          <span style="font-size:11px; color:#a9abb3; margin-left:auto;">500ms</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#97a9ff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>duration-xl</code></span>
+          <span style="font-size:11px; color:#a9abb3; margin-left:auto;">800ms</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="label">Easing</div>
+      <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#a68cff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>ease-stripe</code></span>
+          <span style="font-size:10px; color:#a9abb3; margin-left:auto;">cubic(0.45,0.05,0.55,0.95)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#a68cff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>ease-out-stripe</code></span>
+          <span style="font-size:10px; color:#a9abb3; margin-left:auto;">cubic(0.4,0,0.2,1)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:10px; height:10px; background:#a68cff; border-radius:50%; flex-shrink:0;"></div>
+          <span style="font-size:12px; color:#ecedf6;"><code>ease-smooth</code></span>
+          <span style="font-size:10px; color:#a9abb3; margin-left:auto;">cubic(0.6,0,0.2,0.5)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3 — Shadow tokens (replace glow with elevation)</h3>
+  <div style="display:flex; gap:20px; margin-top:12px; flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <div style="width:100px; height:56px; background:rgba(22,26,33,0.9); border-radius:8px; box-shadow:rgba(23,23,23,0.06) 0px 3px 6px 0px; margin:0 auto; border:1px solid rgba(255,255,255,0.06);"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:6px;"><code>shadow-stripe-md</code></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:100px; height:56px; background:rgba(22,26,33,0.9); border-radius:8px; box-shadow:rgba(0,0,0,0.2) 0px 0px 32px 8px; margin:0 auto; border:1px solid rgba(255,255,255,0.06);"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:6px;"><code>shadow-stripe-lg</code></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:100px; height:56px; background:rgba(22,26,33,0.9); border-radius:8px; box-shadow:rgba(0,0,0,0.15) 0px 16px 32px 0px, rgba(0,0,0,0.1) 0px 4px 8px 0px; margin:0 auto; border:1px solid rgba(255,255,255,0.06);"></div>
+      <div style="font-size:10px; color:#a9abb3; margin-top:6px;"><code>shadow-stripe-xl</code></div>
+    </div>
+  </div>
+  <p style="font-size:12px; color:#a9abb3; margin-top:10px;">Replaces <code>shadow-card</code> (colored glow) and <code>shadow-glass</code>. Keeps depth without color tinting.</p>
+</div>
+
+<div class="section">
+  <h3>4 — Border radius token</h3>
+  <p style="color:#a9abb3; font-size:13px;">Add <code>--radius-card: 8px</code>. Map to existing Tailwind <code>rounded-lg</code> (already 8px). Components using <code>rounded-xl</code> (12px) drop to <code>rounded-lg</code>.</p>
+</div>
