@@ -1,6 +1,7 @@
 "use client";
 
 import { CaretLeft, CaretRight, Quotes } from "@phosphor-icons/react";
+import Image from "next/image";
 
 const Testimonials = () => {
   return (
@@ -81,9 +82,11 @@ const Testimonials = () => {
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
-                    <img
+                    <Image
                       alt="Client"
                       className="w-full h-full object-cover"
+                      width={48}
+                      height={48}
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXbBR_artbzYUmR_hkI8OxQoVk-Pb2c_RWHlr50enG6OqnTKHjy0BIOx0xGvfgnlXAjKfriGxaBDVwJ_EZxV67bhMMU18xBEpBK7YbTd8hUNNzVc9iakHw8W7reInw5wkLSZ9MspVa9xvMdFowzw5NadpGrR7ZaUJ1SLg8ID3gS5Ieboa5m7e0bTtFDHG9QwYDKfIl91YoQD1DWMuLB09LDLw-ThFEOBCJBkqD7mXwxCNQsyYW7oFeQK0Eb-o-leYzRcfC5ye2o4M"
                     />
                   </div>
