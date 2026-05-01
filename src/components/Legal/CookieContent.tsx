@@ -100,7 +100,7 @@ const CookieContent = () => (
         <h4>Updates to This Policy</h4>
         <p>
           This Cookie Policy may be updated to reflect legal, technical, or
-          operational changes. The "Last updated" date at the top of this
+          operational changes. The &ldquo;Last updated&rdquo; date at the top of this
           document indicates the most recent revision.
         </p>
       </div>

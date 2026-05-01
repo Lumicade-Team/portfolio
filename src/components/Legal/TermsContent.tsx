@@ -6,8 +6,8 @@ const TermsContent = () => (
         <p className="text-sm text-muted">Last updated: April 30, 2026</p>
 
         <p>
-          These Terms of Service ("Terms") govern access to and use of
-          Lumicade Solutions' website and related digital services. By
+          These Terms of Service (&ldquo;Terms&rdquo;) govern access to and use of
+          Lumicade Solutions&rsquo; website and related digital services. By
           accessing or using the services, you agree to be bound by these Terms
           and all applicable Malaysian laws.
         </p>
@@ -58,7 +58,7 @@ const TermsContent = () => (
 
         <h4>Consumer Protection</h4>
         <p>
-          Where Lumicade's services constitute a trade transaction under the
+          Where Lumicade&rsquo;s services constitute a trade transaction under the
           <strong> Consumer Protection Act 1999</strong> and the
           <strong> Electronic Commerce (Consumer Protection) Regulations 2012</strong>,
           Lumicade Solutions complies with applicable disclosure and consumer
@@ -85,9 +85,9 @@ const TermsContent = () => (
         <h4>Disclaimers</h4>
         <p>
           To the fullest extent permitted by Malaysian law, the services are
-          provided <strong>"as is"</strong> and <strong>"as available"</strong>
+          provided <strong>&ldquo;as is&rdquo;</strong> and <strong>&ldquo;as available&rdquo;</strong>
           without warranties of any kind, express or implied, including
-          merchantability, fitness for a particular purpose, and non-
+          merchantability, fitness for a particular purpose, and non&ndash;
           infringement.
         </p>
 

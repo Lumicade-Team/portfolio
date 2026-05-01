@@ -6,7 +6,7 @@ const PrivacyContent = () => (
         <p className="text-sm text-muted">Last updated: April 30, 2026</p>
 
         <p>
-          Lumicade Solutions ("Lumicade", "we", "us", "our") respects your
+          Lumicade Solutions (&ldquo;Lumicade&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) respects your
           privacy and is committed to handling personal data in accordance with
           the <strong>Personal Data Protection Act 2010 (PDPA, Act 709)</strong>,
           as amended by the <strong>Personal Data Protection (Amendment) Act 2024</strong>,
