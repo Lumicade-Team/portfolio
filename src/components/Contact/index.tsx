@@ -2,7 +2,7 @@ import EnquiryDialog from "@/components/EnquiryDialog";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-32 bg-white">
+    <section id="contact" className="py-32 bg-surface-container-lowest">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="bg-primary rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
           {/* Subtle gradient overlays */}

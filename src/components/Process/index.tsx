@@ -2,7 +2,7 @@ const Process = () => {
   return (
     <section id="process" className="py-32 bg-surface-container-low">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="text-center mb-20 max-w-3xl mx-auto">
+        <div className="text-left mb-20">
           <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-on-surface mb-6">
             Our Process
           </h2>
@@ -19,7 +19,9 @@ const Process = () => {
             <div className="text-5xl font-headline font-black text-outline-variant/40 mb-6 group-hover:text-primary/30 transition-colors duration-sm ease-out-stripe">
               01
             </div>
-            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">Discovery</h4>
+            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">
+              Discovery
+            </h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Defining goals, mapping users, and establishing technical
               constraints.
@@ -31,7 +33,9 @@ const Process = () => {
             <div className="text-5xl font-headline font-black text-outline-variant/40 mb-6 group-hover:text-tertiary/30 transition-colors duration-sm ease-out-stripe">
               02
             </div>
-            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">Design</h4>
+            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">
+              Design
+            </h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Architecting the visual and structural blueprint of the
               experience.
@@ -43,7 +47,9 @@ const Process = () => {
             <div className="text-5xl font-headline font-black text-outline-variant/40 mb-6 group-hover:text-secondary/30 transition-colors duration-sm ease-out-stripe">
               03
             </div>
-            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">Develop</h4>
+            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">
+              Develop
+            </h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Clean, tested code written for high-performance and future
               scaling.
@@ -55,7 +61,9 @@ const Process = () => {
             <div className="text-5xl font-headline font-black text-outline-variant/40 mb-6 group-hover:text-primary/30 transition-colors duration-sm ease-out-stripe">
               04
             </div>
-            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">Deploy</h4>
+            <h4 className="font-headline text-xl font-bold text-on-surface mb-3">
+              Deploy
+            </h4>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Strategic launch with continuous monitoring and optimization.
             </p>

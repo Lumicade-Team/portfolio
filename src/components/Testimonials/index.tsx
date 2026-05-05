@@ -6,51 +6,8 @@ import Image from "next/image";
 const Testimonials = () => {
   return (
     <>
-      {/* Dark "backbone" section — Stripe-style dark mid-page section */}
-      <section className="py-32 bg-[#0a2540] overflow-hidden relative">
-        {/* Subtle gradient accent */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 blur-[120px] rounded-full" />
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <div className="flex-1">
-              <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-white mb-8 leading-tight">
-                The backbone of{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#635bff] to-[#06b6d4]">
-                  Digital Malaysia.
-                </span>
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed max-w-xl">
-                From logistics to fintech, from mobile to enterprise — Lumicade
-                powers the critical software infrastructure that ambitious
-                Malaysian businesses rely on.
-              </p>
-            </div>
-            <div className="flex-1">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
-                  <div className="font-headline text-4xl font-bold text-white mb-2">40+</div>
-                  <div className="text-white/50 text-sm uppercase tracking-widest">Clients Served</div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
-                  <div className="font-headline text-4xl font-bold text-white mb-2">6+</div>
-                  <div className="text-white/50 text-sm uppercase tracking-widest">Industry Domains</div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
-                  <div className="font-headline text-4xl font-bold text-white mb-2">100%</div>
-                  <div className="text-white/50 text-sm uppercase tracking-widest">On-time Delivery</div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
-                  <div className="font-headline text-4xl font-bold text-white mb-2">24h</div>
-                  <div className="text-white/50 text-sm uppercase tracking-widest">Response Time</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials section */}
-      <section id="testimonials" className="py-32 bg-surface-container-low overflow-hidden">
+      <section id="testimonials" className="py-32 bg-white overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>

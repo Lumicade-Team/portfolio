@@ -65,6 +65,11 @@ const Products = () => {
   return (
     <section id="products" className="py-32 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
+        <div className="text-left mb-20">
+          <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-on-surface mb-6">
+            Proprietary Products
+          </h2>
+        </div>
         <div
           ref={containerRef}
           className="flex overflow-x-auto snap-x snap-mandatory gap-5 -mx-6 px-6 pb-2 [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible"
