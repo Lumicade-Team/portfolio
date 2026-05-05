@@ -30,7 +30,6 @@ const Hero = () => {
     let rafId: number;
 
     const tick = () => {
-      let dirty = false;
       blobRefs.current.forEach((el, i) => {
         if (!el) return;
         const [sx, sy] = BLOB_STRENGTHS[i];
@@ -39,7 +38,6 @@ const Hero = () => {
         pos[i].x += (tx - pos[i].x) * LERP;
         pos[i].y += (ty - pos[i].y) * LERP;
         el.style.transform = `translate(${pos[i].x.toFixed(2)}px, ${pos[i].y.toFixed(2)}px)`;
-        if (Math.abs(tx - pos[i].x) > 0.05 || Math.abs(ty - pos[i].y) > 0.05) dirty = true;
       });
       rafId = requestAnimationFrame(tick);
     };
